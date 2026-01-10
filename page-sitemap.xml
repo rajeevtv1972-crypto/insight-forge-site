@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
-    <loc>https://insight-forge-blog.pages.dev/</loc>
+    <loc>https://insight-forge-site.pages.dev/</loc>
     <priority>1.0</priority>
   </url>
 
-  <url><loc>https://insight-forge-blog.pages.dev/ddr5-prices-2026.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/Upcoming-Anime-2026.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/avengers-doomsday-2026.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/indian-space-program-explained.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/avatar3-boxoffice-2026.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/one-piece-season-1-summary.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/one-piece-season-2-preview.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/tech-news-weekly-2026-01-04.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/nasa-perseverance-rover-mars.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/mars-sample-return-mission-explained.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/human-mission-to-mars-explained.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/life-on-mars-evidence-debate.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/upcoming-isekai-2026.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/ces-2026-highlights.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/wolf-moon-explained.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/naruto-anniversary-specials.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/oshi-no-ko-season3-premiere.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/nvidia-vera-rubin-explained.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/perseverance-potential-biosignature.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/ces-robotaxis-humanoids-roundup.html</loc></url>
+  <!-- Blog posts -->
+  <url><loc>https://insight-forge-site.pages.dev/ddr5-prices-2026.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/upcoming-anime-2026.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/avengers-doomsday-2026.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/indian-space-program-explained.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/avatar3-boxoffice-2026.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/one-piece-season-1-summary.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/one-piece-season-2-preview.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/tech-news-weekly-2026-01-04.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/nasa-perseverance-rover-mars.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/mars-sample-return-mission-explained.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/human-mission-to-mars-explained.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/life-on-mars-evidence-debate.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/upcoming-isekai-2026.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/ces-2026-highlights.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/wolf-moon-explained.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/naruto-anniversary-specials.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/oshi-no-ko-season3-premiere.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/nvidia-vera-rubin-explained.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/perseverance-potential-biosignature.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/ces-robotaxis-humanoids-roundup.html</loc></url>
 
-  <url><loc>https://insight-forge-blog.pages.dev/about.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/contact.html</loc></url>
-  <url><loc>https://insight-forge-blog.pages.dev/privacy-policy.html</loc></url>
+  <!-- Required site pages -->
+  <url><loc>https://insight-forge-site.pages.dev/about.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/contact.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/privacy-policy.html</loc></url>
 
 </urlset>
