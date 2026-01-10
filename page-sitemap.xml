@@ -7,12 +7,17 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Blog posts -->
+  <!-- NEW BLOG -->
+  <url>
+    <loc>https://insight-forge-site.pages.dev/avengers-doomsday-runtime-confirmed.html</loc>
+  </url>
+
+  <!-- EXISTING BLOGS -->
   <url><loc>https://insight-forge-site.pages.dev/ddr5-prices-2026.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/upcoming-anime-2026.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/avengers-doomsday-2026.html</loc></url>
-  <url><loc>https://insight-forge-site.pages.dev/indian-space-program-explained.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/avatar3-boxoffice-2026.html</loc></url>
+  <url><loc>https://insight-forge-site.pages.dev/indian-space-program-explained.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/one-piece-season-1-summary.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/one-piece-season-2-preview.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/tech-news-weekly-2026-01-04.html</loc></url>
@@ -29,7 +34,7 @@
   <url><loc>https://insight-forge-site.pages.dev/perseverance-potential-biosignature.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/ces-robotaxis-humanoids-roundup.html</loc></url>
 
-  <!-- Required site pages -->
+  <!-- REQUIRED PAGES -->
   <url><loc>https://insight-forge-site.pages.dev/about.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/contact.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/privacy-policy.html</loc></url>

@@ -3,6 +3,15 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <!-- NEW BLOG -->
+  <url>
+    <loc>https://insight-forge-site.pages.dev/avengers-doomsday-runtime-confirmed.html</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/avengers-doomsday-runtime-confirmed.jpg</image:loc>
+    </image:image>
+  </url>
+
+  <!-- EXISTING BLOGS -->
   <url>
     <loc>https://insight-forge-site.pages.dev/ddr5-prices-2026.html</loc>
     <image:image>
@@ -25,16 +34,16 @@
   </url>
 
   <url>
-    <loc>https://insight-forge-site.pages.dev/indian-space-program-explained.html</loc>
+    <loc>https://insight-forge-site.pages.dev/avatar3-boxoffice-2026.html</loc>
     <image:image>
-      <image:loc>https://insight-forge-site.pages.dev/images/indian-space-program.jpg</image:loc>
+      <image:loc>https://insight-forge-site.pages.dev/images/avatar3-boxoffice-2026.jpg</image:loc>
     </image:image>
   </url>
 
   <url>
-    <loc>https://insight-forge-site.pages.dev/avatar3-boxoffice-2026.html</loc>
+    <loc>https://insight-forge-site.pages.dev/indian-space-program-explained.html</loc>
     <image:image>
-      <image:loc>https://insight-forge-site.pages.dev/images/avatar3-boxoffice-2026.jpg</image:loc>
+      <image:loc>https://insight-forge-site.pages.dev/images/indian-space-program.jpg</image:loc>
     </image:image>
   </url>
 
