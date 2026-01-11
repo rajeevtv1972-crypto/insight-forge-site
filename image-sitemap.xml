@@ -152,4 +152,19 @@
     </image:image>
   </url>
 
+<url>
+  <loc>https://insight-forge-site.pages.dev/winter-anime-2026-updates.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/winter-anime-2026-updates.jpg</image:loc>
+  </image:image>
+</url>
+
+<url>
+  <loc>https://insight-forge-site.pages.dev/animejapan-2026-highlights.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/animejapan-2026-highlights.jpg</image:loc>
+  </image:image>
+</url>
+
+
 </urlset>
