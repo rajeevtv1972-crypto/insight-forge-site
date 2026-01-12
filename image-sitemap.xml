@@ -166,5 +166,13 @@
   </image:image>
 </url>
 
+<url>
+  <loc>https://insight-forge-site.pages.dev/tech-news-2.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/tech-news-2.jpg</image:loc>
+  </image:image>
+</url>
+
+
 
 </urlset>
