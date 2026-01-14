@@ -196,6 +196,25 @@
     <image:loc>https://insight-forge-site.pages.dev/images/marvel-multiverse-guide.jpg</image:loc>
   </image:image>
 </url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/marvel-secret-wars-complete-timeline.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/marvel-secret-wars.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/mcu-phase-by-phase-complete-breakdown.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/mcu-phases-timeline.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/gaming-new-releases-2026.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/gaming-new-releases-2026.jpg</image:loc>
+  </image:image>
+</url>
+
 
 
 </urlset>

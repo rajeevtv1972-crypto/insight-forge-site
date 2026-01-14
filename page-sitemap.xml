@@ -7,6 +7,27 @@
     <priority>1.0</priority>
   </url>
 
+<url>
+  <loc>https://insight-forge-site.pages.dev/anime.html</loc>
+</url>
+
+<url>
+  <loc>https://insight-forge-site.pages.dev/movies.html</loc>
+</url>
+
+<url>
+  <loc>https://insight-forge-site.pages.dev/tech.html</loc>
+</url>
+
+<url>
+  <loc>https://insight-forge-site.pages.dev/space-science.html</loc>
+</url>
+
+<url>
+  <loc>https://insight-forge-site.pages.dev/gaming.html</loc>
+</url>
+
+
   <!-- NEW BLOG -->
   <url>
     <loc>https://insight-forge-site.pages.dev/avengers-doomsday-runtime-confirmed.html</loc>
@@ -50,6 +71,17 @@
 <url>
   <loc>https://insight-forge-site.pages.dev/marvel-multiverse-complete-guide.html</loc>
 </url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/marvel-secret-wars-complete-timeline.html</loc>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/mcu-phase-by-phase-complete-breakdown.html</loc>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/gaming-new-releases-2026.html</loc>
+</url>
+
+
   <!-- REQUIRED PAGES -->
   <url><loc>https://insight-forge-site.pages.dev/about.html</loc></url>
   <url><loc>https://insight-forge-site.pages.dev/contact.html</loc></url>
