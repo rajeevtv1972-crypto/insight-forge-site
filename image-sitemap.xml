@@ -178,5 +178,24 @@
     <image:loc>https://insight-forge-site.pages.dev/images/spiderman-brand-new-day.jpg</image:loc>
   </image:image>
 </url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/spiderman-complete-timeline-explained.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/spiderman-timeline.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/spiderman-villains-complete-timeline.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/spiderman-villains-timeline.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/marvel-multiverse-complete-guide.html</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/images/marvel-multiverse-guide.jpg</image:loc>
+  </image:image>
+</url>
+
 
 </urlset>
