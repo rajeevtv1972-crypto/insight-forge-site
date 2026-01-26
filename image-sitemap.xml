@@ -239,6 +239,30 @@
     <image:loc>https://insight-forge-site.pages.dev/image/ces-ai-news-today.jpg</image:loc>
   </image:image>
 </url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/tech-news-3</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/image/tech-news-3.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/iphone-18-leaks</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/image/iphone-18-leaks.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/dune-part-two-review</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/image/dune-part-two-review.jpg</image:loc>
+  </image:image>
+</url>
+<url>
+  <loc>https://insight-forge-site.pages.dev/oppenheimer-review</loc>
+  <image:image>
+    <image:loc>https://insight-forge-site.pages.dev/image/oppenheimer-review.jpg</image:loc>
+  </image:image>
+</url>
 
 
 </urlset>
