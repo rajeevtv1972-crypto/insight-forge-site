@@ -2,41 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contact Us | Insight Forge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        :root{--primary-bg:#f8f9fa;--card-bg:#ffffff;--text-main:#1f2937;--accent-color:#2563eb;--header-bg:#0f172a;--nav-bg:#1e293b;}
+        *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:var(--primary-bg);color:var(--text-main);line-height:1.6}
+
+        header{background:var(--header-bg);color:#fff;padding:40px 20px;text-align:center;border-bottom:4px solid var(--accent-color)}
+        header h1{margin:0;font-size:2.5rem}
+        nav{background:var(--nav-bg);position:sticky;top:0;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.1);text-align:center;padding:10px}
+        nav a{color:#e2e8f0;padding:10px 15px;text-decoration:none;font-weight:600;display:inline-block}
+        nav a:hover{color:var(--accent-color)}
+
+        main{max-width:600px;margin:60px auto;padding:0 20px;text-align:center}
+        
+        .contact-card{
+            background:var(--card-bg);
+            padding:50px 30px;
+            border-radius:12px;
+            box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);
+            border:1px solid #e5e7eb;
+        }
+        .contact-card p{font-size:1.1rem;color:#4b5563;margin-bottom:30px}
+        
+        .email-button{
+            background-color:var(--accent-color);
+            color:white;
+            padding:15px 30px;
+            border-radius:50px;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:1.1rem;
+            display:inline-block;
+            transition:background 0.2s;
+        }
+        .email-button:hover{background-color:#1d4ed8}
+
+        .response-time{margin-top:30px;font-size:0.9rem;color:#6b7280;font-style:italic}
+
+        footer{background:#020617;color:#94a3b8;text-align:center;padding:40px 20px;margin-top:80px}
+    </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Contact Us</h1>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="privacy-policy.html">Privacy Policy</a>
     </nav>
-</header>
 
-<div class="container">
-    <div class="card">
-        <p>
-            We value your feedback, questions, and suggestions.
-            If you need to get in touch with us, feel free to email us.
-        </p>
-
-        <h3>Email</h3>
-        <p>
-            <a href="mailto:contactussiteinfotechdesk@gmail.com">
-                contactussiteinfotechdesk@gmail.com
+    <main>
+        <div class="contact-card">
+            <h2>Get in Touch</h2>
+            <p>We value your feedback, questions, and suggestions. If you need to get in touch with us regarding our content or partnerships, feel free to email us.</p>
+            
+            <a href="mailto:contactussiteinfotechdesk@gmail.com" class="email-button">
+                ✉️ Send us an Email
             </a>
-        </p>
 
-        <p>We usually respond within 24–48 hours.</p>
-    </div>
-</div>
+            <p class="response-time">We usually respond within 24–48 hours.</p>
+        </div>
+    </main>
 
-<footer>
-    © 2026 • All Rights Reserved
-</footer>
+    <footer>© 2026 Insight Forge • All Rights Reserved</footer>
 
 </body>
 </html>

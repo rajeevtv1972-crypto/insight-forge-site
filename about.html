@@ -1,134 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>About Insight Forge</title>
+    <meta name="description" content="Learn about InsightForge — an independent blog delivering deep insights on technology, space exploration, anime, and cinema.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        :root{--primary-bg:#f8f9fa;--card-bg:#ffffff;--text-main:#1f2937;--text-muted:#4b5563;--accent-color:#2563eb;--header-bg:#0f172a;--nav-bg:#1e293b;}
+        *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:var(--primary-bg);color:var(--text-main);line-height:1.6}
+        
+        header{background:var(--header-bg);color:#fff;padding:50px 20px;text-align:center;border-bottom:4px solid var(--accent-color)}
+        header h1{margin:0;font-size:2.8rem;letter-spacing:-1px}
+        header p{font-size:1.2rem;color:#cbd5e1;margin-top:10px}
+        
+        nav{background:var(--nav-bg);position:sticky;top:0;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.1);text-align:center;padding:10px}
+        nav a{color:#e2e8f0;padding:10px 15px;text-decoration:none;font-weight:600;display:inline-block}
+        nav a:hover{color:var(--accent-color)}
 
-<title>About InsightForge</title>
+        main{max-width:1000px;margin:50px auto;padding:0 20px}
 
-<meta name="description" content="Learn about InsightForge — an independent blog delivering deep insights on technology, space exploration, anime, and cinema.">
+        /* Introduction Section */
+        .intro{text-align:center;max-width:800px;margin:0 auto 50px auto}
+        .intro p{font-size:1.2rem;color:var(--text-muted)}
 
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0f0f0f;
-    color:#eaeaea;
-    margin:0;
-    line-height:1.8;
-}
-header {
-    background:#1f2933;
-    padding:20px;
-}
-header h1 {
-    margin:0;
-    font-size:26px;
-}
-nav {
-    margin-top:10px;
-}
-nav a {
-    color:#fff;
-    text-decoration:none;
-    margin-right:15px;
-    font-size:14px;
-}
-nav a:hover {
-    text-decoration:underline;
-}
-.container {
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
-h2 {
-    color:#ff4757;
-    margin-top:35px;
-}
-footer {
-    margin-top:50px;
-    text-align:center;
-    font-size:13px;
-    color:#aaa;
-    border-top:1px solid #333;
-    padding:20px;
-}
-</style>
+        /* Grid for Content */
+        .about-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:30px}
+        
+        .card{background:var(--card-bg);padding:30px;border-radius:12px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);border-top:4px solid var(--accent-color)}
+        .card h3{margin-top:0;color:#111827;font-size:1.4rem}
+        .card ul{padding-left:20px;margin-bottom:0}
+        .card li{margin-bottom:8px;color:var(--text-muted)}
+
+        footer{background:#020617;color:#94a3b8;text-align:center;padding:40px 20px;margin-top:80px}
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>InsightForge</h1>
+    <header>
+        <h1>About Insight Forge</h1>
+        <p>Turning noise into clarity.</p>
+    </header>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="contact.html">Contact</a>
         <a href="privacy-policy.html">Privacy Policy</a>
     </nav>
-</header>
 
-<div class="container">
+    <main>
+        
+        <div class="intro">
+            <h2>What is Insight Forge?</h2>
+            <p>Insight Forge is an independent digital publication focused on breaking down complex ideas across technology, space exploration, anime, and cinema.</p>
+            <p>In an internet filled with surface-level content, we take a long-form, research-driven approach — prioritizing context, explanation, and thoughtful analysis over quick headlines.</p>
+        </div>
 
-<h2>What Is InsightForge?</h2>
-<p>
-InsightForge is an independent digital publication focused on breaking down
-complex ideas across technology, space exploration, anime, and cinema.
-The goal is simple: turn noise into clarity.
-</p>
+        <div class="about-grid">
+            <div class="card">
+                <h3>What We Cover</h3>
+                <ul>
+                    <li>Technology trends and hardware analysis</li>
+                    <li>Space exploration and scientific missions</li>
+                    <li>Anime timelines, seasonal guides, and lore</li>
+                    <li>Movies and long-running franchises</li>
+                </ul>
+            </div>
 
-<p>
-In an internet filled with surface-level content, InsightForge takes a
-long-form, research-driven approach — prioritizing context, explanation,
-and thoughtful analysis over quick headlines.
-</p>
+            <div class="card">
+                <h3>Our Philosophy</h3>
+                <p>We believe good information should be accessible without being oversimplified. Every article is written to inform, explain, and encourage curiosity — whether you are a beginner or an enthusiast.</p>
+                <p><strong>Accuracy. Originality. Clarity.</strong> No clickbait. No filler.</p>
+            </div>
 
-<h2>What We Cover</h2>
-<ul>
-<li>Technology trends and hardware analysis</li>
-<li>Space exploration and scientific missions</li>
-<li>Anime timelines, seasonal guides, and lore</li>
-<li>Movies and long-running franchises</li>
-</ul>
+            <div class="card">
+                <h3>Why We Exist</h3>
+                <p>Modern topics like artificial intelligence, space exploration, and cinematic universes are often misunderstood due to fragmented coverage. Insight Forge exists to connect the dots.</p>
+                <p>We help readers understand not just <em>what</em> is happening — but <em>why</em> it matters.</p>
+            </div>
 
-<h2>Our Philosophy</h2>
-<p>
-InsightForge believes that good information should be accessible without
-being oversimplified. Every article is written to inform, explain,
-and encourage curiosity — whether you are a beginner or an enthusiast.
-</p>
+            <div class="card">
+                <h3>Looking Ahead</h3>
+                <p>Insight Forge will continue expanding into deeper explainers, future-focused analysis, and educational content as technology and culture evolve.</p>
+                <p>This is just the beginning.</p>
+            </div>
+        </div>
 
-<p>
-We focus on accuracy, originality, and clarity.
-No clickbait. No filler.
-</p>
+    </main>
 
-<h2>Why InsightForge Exists</h2>
-<p>
-Modern topics like artificial intelligence, space exploration,
-and cinematic universes are often misunderstood due to fragmented coverage.
-InsightForge exists to connect the dots.
-</p>
-
-<p>
-By forging insights from complex subjects, the site helps readers understand
-not just what is happening — but why it matters.
-</p>
-
-<h2>Looking Ahead</h2>
-<p>
-InsightForge will continue expanding into deeper explainers, future-focused
-analysis, and educational content as technology and culture evolve.
-</p>
-
-<p>
-This is just the beginning.
-</p>
-
-</div>
-
-<footer>
-© 2026 • InsightForge • All Rights Reserved
-</footer>
+    <footer>© 2026 Insight Forge • All Rights Reserved</footer>
 
 </body>
 </html>

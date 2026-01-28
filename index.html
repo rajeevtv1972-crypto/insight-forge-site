@@ -1,156 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Insight Forge – Tech, Anime, Movies, Gaming & Science Explained</title>
+    <meta name="description" content="Insight Forge delivers in-depth articles on technology, anime, movies, gaming, and space science with explainers, timelines, and weekly updates.">
+    <meta name="keywords" content="Anime, MCU, Technology, Space Science, Gaming, Tech News 2026">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://insight-forge-site.pages.dev"/>
 
-<title>Insight Forge – Tech, Anime, Movies, Gaming & Science Explained</title>
-<link rel="canonical" href="https://insight-forge-site.pages.dev"/>
+    <meta property="og:title" content="Insight Forge – Tech, Anime, Movies & Gaming">
+    <meta property="og:description" content="Deep dives, timelines, and weekly updates on the topics you love.">
+    <meta property="og:url" content="https://insight-forge-site.pages.dev/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Insight Forge">
+    <meta property="og:image" content="https://insight-forge-site.pages.dev/social-share.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Insight Forge">
+    <meta name="twitter:description" content="Tech, Anime, Movies, Gaming & Science Explained.">
 
-<meta name="referrer" content="no-referrer-when-downgrade" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3756147512527882" crossorigin="anonymous"></script>
 
-<meta name="description" content="Insight Forge delivers in-depth articles on technology, anime, movies, gaming, and space science with explainers, timelines, and weekly updates.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="max-image-preview:large">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Insight Forge",
+      "url": "https://insight-forge-site.pages.dev/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://insight-forge-site.pages.dev/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://insight-forge-site.pages.dev/"
+      }]
+    }
+    </script>
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3756147512527882" crossorigin="anonymous"></script>
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --accent-color: #2563eb; /* Blue */
+            --header-bg: #0f172a; /* Dark Slate */
+            --nav-bg: #1e293b;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
-<style>
-body{font-family:Arial,sans-serif;margin:0;background:#f8f9fa;color:#222}
-.site-title{background:#020617;color:#fff;text-align:center;padding:14px;font-size:1.6rem;font-weight:bold}
-header{background:#0f172a;color:#fff;padding:34px 20px;text-align:center}
-nav{background:#1e293b;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-nav a{color:#e5e7eb;margin:0 12px;text-decoration:none;font-weight:bold}
-nav a:hover{text-decoration:underline}
-main{max-width:1050px;margin:35px auto;padding:0 20px}
-section{background:#fff;padding:30px;margin-bottom:30px;border-radius:10px}
-h2{color:#111827;margin-top:0}
-h2 small{font-size:0.85rem;margin-left:10px}
-h2 small a{color:#2563eb;text-decoration:none}
-h2 small a:hover{text-decoration:underline}
-ul{padding-left:22px}
-li{margin-bottom:10px}
-footer{background:#020617;color:#c7d2fe;text-align:center;padding:24px}
-footer a{color:#93c5fd;text-decoration:none}
-</style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://insight-forge-site.pages.dev/"
-  }]
-}
-</script>
+        /* --- GLOBAL RESETS --- */
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        ul { list-style: none; padding: 0; margin: 0; }
 
+        /* --- HEADER & NAV --- */
+        .site-banner {
+            background: #020617;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
+        header p { margin-top: 10px; color: #94a3b8; font-size: 1.1rem; }
+
+        nav {
+            background: var(--nav-bg);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #e2e8f0;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: block;
+        }
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* --- MAIN LAYOUT --- */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            margin-bottom: 50px;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #111827;
+        }
+        .view-all {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .view-all:hover { text-decoration: underline; }
+
+        /* --- CARD GRID --- */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+        .card a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            display: block;
+        }
+        .card a:hover { color: var(--accent-color); }
+        
+        /* New tag styling for visual flair */
+        .tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #1e293b;
+        }
+        footer p { margin: 0; font-size: 0.9rem; }
+        .footer-links { margin-top: 15px; }
+        .footer-links a { margin: 0 10px; color: #cbd5e1; }
+        .footer-links a:hover { color: var(--accent-color); }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            nav a { padding: 12px 10px; font-size: 0.85rem; }
+            .article-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="site-title">Insight Forge</div>
+    <div class="site-banner">Trusted by Tech & Geek Culture Enthusiasts</div>
 
-<header>
-  <h1>Tech, Anime, Movies, Gaming & Science Explained</h1>
-  <p>Deep dives, timelines, and weekly updates — all in one place</p>
-</header>
+    <header>
+        <h1>Insight Forge</h1>
+        <p>Tech, Anime, Movies, Gaming & Science Explained</p>
+    </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="anime.html">Anime</a>
-  <a href="movies.html">Movies</a>
-  <a href="tech.html">Tech</a>
-  <a href="space-science.html">Space</a>
-  <a href="gaming.html">Gaming</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="anime.html">Anime</a>
+            <a href="movies.html">Movies</a>
+            <a href="tech.html">Tech</a>
+            <a href="space-science.html">Space</a>
+            <a href="gaming.html">Gaming</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
 
+    <main>
 
-<main>
+        <section>
+            <div class="section-header">
+                <h2>🎌 Anime</h2>
+                <a href="anime.html" class="view-all">View all →</a>
+            </div>
+            <div class="article-grid">
+                <article class="card">
+                    <span class="tag">Winter 2026</span>
+                    <a href="winter-anime-2026-updates.html">Winter Anime 2026 Updates: Jujutsu Kaisen S3 & More</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Upcoming</span>
+                    <a href="upcoming-anime-2026.html">Upcoming Anime in 2026 You Shouldn’t Miss</a>
+                </article>
+                <article class="card">
+                    <span class="tag">One Piece</span>
+                    <a href="one-piece-season-2-preview.html">One Piece Season 2 – What to Expect</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Genre</span>
+                    <a href="upcoming-isekai-2026.html">Upcoming Isekai Anime in 2026</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Events</span>
+                    <a href="animejapan-2026-highlights.html">AnimeJapan 2026 Highlights & Trending Titles</a>
+                </article>
+                <article class="card">
+                    <span class="tag">News</span>
+                    <a href="oshi-no-ko-season3-premiere.html">Oshi no Ko Season 3 – Release Date & Predictions</a>
+                </article>
+            </div>
+        </section>
 
-<!-- ANIME -->
-<section>
-  <h2>🎌 Anime <small><a href="anime.html">View all →</a></small></h2>
-  <ul>
-    <li><a href="upcoming-anime-2026.html">Upcoming Anime in 2026 You Shouldn’t Miss</a></li>
-    <li><a href="upcoming-isekai-2026.html">Upcoming Isekai Anime in 2026</a></li>
-    <li><a href="winter-anime-2026-updates.html">Winter Anime 2026 Updates: Jujutsu Kaisen S3 & More</a></li>
-    <li><a href="animejapan-2026-highlights.html">AnimeJapan 2026 Highlights & Trending Titles</a></li>
-    <li><a href="one-piece-season-1-summary.html">One Piece Season 1 – Full Summary</a></li>
-    <li><a href="one-piece-season-2-preview.html">One Piece Season 2 – What to Expect</a></li>
-    <li><a href="naruto-anniversary-specials.html">Naruto Anniversary Specials Explained</a></li>
-    <li><a href="oshi-no-ko-season3-premiere.html">Oshi no Ko Season 3 – Release Date & Predictions</a></li>
-  </ul>
-</section>
+        <section>
+            <div class="section-header">
+                <h2>🎬 Movies & MCU</h2>
+                <a href="movies.html" class="view-all">View all →</a>
+            </div>
+            <div class="article-grid">
+                <article class="card">
+                    <span class="tag">MCU</span>
+                    <a href="avengers-doomsday-2026.html">Avengers: Doomsday (2026) – Plot & Expectations</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Box Office</span>
+                    <a href="avatar3-boxoffice-2026.html">Avatar 3 Box Office Predictions for 2026</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Marvel</span>
+                    <a href="marvel-secret-wars-complete-timeline.html">Marvel Secret Wars – Complete Timeline</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Spider-Man</span>
+                    <a href="spiderman-brand-new-day-explained.html">Spider-Man: Brand New Day Explained</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Guide</span>
+                    <a href="mcu-phase-by-phase-complete-breakdown.html">MCU Phase-by-Phase Breakdown</a>
+                </article>
+            </div>
+        </section>
 
-<!-- MOVIES -->
-<section>
-  <h2>🎬 Movies & MCU <small><a href="movies.html">View all →</a></small></h2>
-  <ul>
-    <li><a href="avengers-doomsday-2026.html">Avengers: Doomsday (2026) – Plot & Expectations</a></li>
-    <li><a href="avengers-doomsday-runtime-confirmed.html">Avengers: Doomsday Runtime Confirmed</a></li>
-    <li><a href="avatar3-boxoffice-2026.html">Avatar 3 Box Office Predictions for 2026</a></li>
-    <li><a href="spiderman-brand-new-day-explained.html">Spider-Man: Brand New Day Explained</a></li>
-    <li><a href="spiderman-complete-timeline-explained.html">Spider-Man Complete Timeline Explained</a></li>
-    <li><a href="spiderman-villains-complete-timeline.html">Spider-Man Villains Complete Timeline</a></li>
-    <li><a href="marvel-multiverse-complete-guide.html">Marvel Multiverse Explained</a></li>
-    <li><a href="marvel-secret-wars-complete-timeline.html">Marvel Secret Wars – Complete Timeline</a></li>
-    <li><a href="mcu-phase-by-phase-complete-breakdown.html">MCU Phase-by-Phase Breakdown</a></li>
-  </ul>
-</section>
+        <section>
+            <div class="section-header">
+                <h2>💻 Technology</h2>
+                <a href="tech.html" class="view-all">View all →</a>
+            </div>
+            <div class="article-grid">
+                <article class="card">
+                    <span class="tag">Hardware</span>
+                    <a href="nvidia-vera-rubin-explained.html">NVIDIA Vera Rubin Explained</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Market</span>
+                    <a href="ddr5-prices-2026.html">DDR5 Prices in 2026 Explained</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Events</span>
+                    <a href="ces-2026-highlights.html">CES 2026 Highlights & Innovations</a>
+                </article>
+                <article class="card">
+                    <span class="tag">News</span>
+                    <a href="tech-news-weekly-2026-01-04.html">Tech News Weekly – January 2026</a>
+                </article>
+            </div>
+        </section>
 
+        <section>
+            <div class="section-header">
+                <h2>🚀 Space & Science</h2>
+                <a href="space-science.html" class="view-all">View all →</a>
+            </div>
+            <div class="article-grid">
+                <article class="card">
+                    <span class="tag">ISRO</span>
+                    <a href="indian-space-program-explained.html">Indian Space Program Explained</a>
+                </article>
+                <article class="card">
+                    <span class="tag">NASA</span>
+                    <a href="mars-sample-return-mission-explained.html">Mars Sample Return Mission Explained</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Exploration</span>
+                    <a href="human-mission-to-mars-explained.html">Human Mission to Mars – Challenges & Timeline</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Astronomy</span>
+                    <a href="wolf-moon-explained.html">Wolf Moon Explained – Meaning & Science</a>
+                </article>
+            </div>
+        </section>
 
-<!-- TECH -->
-<section>
-  <h2>💻 Technology <small><a href="tech.html">View all →</a></small></h2>
-  <ul>
-    <li><a href="tech-news-2.html">Tech News 2 – Major Headlines This Week</a></li>
-    <li><a href="tech-news-weekly-2026-01-04.html">Tech News Weekly – January 2026</a></li>
-    <li><a href="ddr5-prices-2026.html">DDR5 Prices in 2026 Explained</a></li>
-    <li><a href="nvidia-vera-rubin-explained.html">NVIDIA Vera Rubin Explained</a></li>
-    <li><a href="ces-2026-highlights.html">CES 2026 Highlights & Innovations</a></li>
-  </ul>
-</section>
+        <section>
+            <div class="section-header">
+                <h2>🎮 Gaming</h2>
+                <a href="gaming.html" class="view-all">View all →</a>
+            </div>
+            <div class="article-grid">
+                <article class="card">
+                    <span class="tag">Releases</span>
+                    <a href="gaming-new-releases-2026.html">Gaming: New Releases to Watch in 2026</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Trending</span>
+                    <a href="where-winds-meet-free-to-play-success.html">Where Winds Meet – Free-to-Play Record Breaker</a>
+                </article>
+                <article class="card">
+                    <span class="tag">Indie</span>
+                    <a href="gaming-indie-spotlight-2026.html">Gaming Indie Spotlight 2026 — Underdogs to Try</a>
+                </article>
+            </div>
+        </section>
 
-<!-- SPACE -->
-<section>
-  <h2>🚀 Space & Science <small><a href="space-science.html">View all →</a></small></h2>
-  <ul>
-    <li><a href="indian-space-program-explained.html">Indian Space Program Explained</a></li>
-    <li><a href="nasa-perseverance-rover-mars.html">NASA Perseverance Rover – Latest Discoveries</a></li>
-    <li><a href="mars-sample-return-mission-explained.html">Mars Sample Return Mission Explained</a></li>
-    <li><a href="human-mission-to-mars-explained.html">Human Mission to Mars – Challenges & Timeline</a></li>
-    <li><a href="life-on-mars-evidence-debate.html">Is There Life on Mars?</a></li>
-    <li><a href="wolf-moon-explained.html">Wolf Moon Explained – Meaning & Science</a></li>
-  </ul>
-</section>
+    </main>
 
-<!-- GAMING -->
-<section>
-  <h2>🎮 Gaming <small><a href="gaming.html">View all →</a></small></h2>
-<ul>
-<li><a href="gaming-new-releases-2026.html">Gaming: New Releases to Watch in 2026</a></li>
-<li><a href="where-winds-meet-free-to-play-success.html">
-Where Winds Meet – Free-to-Play Game Breaks Download Records
-</a></li>
-<li><a href="gaming-indie-spotlight-2026.html">Gaming Indie Spotlight 2026 — Underdogs You Should Try</a></li>
-
-</ul>
-</section>
-
- 
-</main>
-
-<footer>
-  <p>© 2026 Insight Forge</p>
-</footer>
-    <!-- Article content ends here -->
-
-</body>
-</html>
+    <footer>
+        <p>© 2026 Insight Forge. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </footer>
 
 </body>
 </html>
