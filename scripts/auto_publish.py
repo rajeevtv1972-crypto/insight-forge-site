@@ -244,7 +244,7 @@ main{{max-width:900px;margin:30px auto;padding:0 20px}}article{{background:#fff;
 
 def update_category_page(path, a, today):
     content = read_file(path)
-    card = f'<article class="card"><span class="tag">{html.escape(a["tag"])} · {dt.datetime.strptime(today, "%Y-%m-%d").strftime("%b %d")}</span><a href="{a["slug"]}.html">{html.escape(a["title"])}</a></article>'
+    card = f'<article class="card"><span class="tag">{html.escape(next(x for x in GENRES if x["name"] == a["genre"])["tag"])} · {dt.datetime.strptime(today, "%Y-%m-%d").strftime("%b %d")}</span><a href="{a["slug"]}.html">{html.escape(a["title"])}</a></article>'
     marker = '<div class="article-grid">'
     if marker not in content:
         print(f"WARNING: could not update {path}: article-grid marker missing")
