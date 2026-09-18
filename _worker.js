@@ -1,4 +1,5 @@
 const THEME_HREF = '/css/liquid-glass.css?v=1';
+const FAVICON_HREF = '/favicon.svg?v=1';
 
 export default {
   async fetch(request, env) {
@@ -12,7 +13,7 @@ export default {
     const themed = new HTMLRewriter()
       .on('head', {
         element(element) {
-          element.append(`<link rel="stylesheet" href="${THEME_HREF}">`, { html: true });
+          element.append(`<link rel="stylesheet" href="${THEME_HREF}"><link rel="icon" href="${FAVICON_HREF}" type="image/svg+xml" sizes="any">`, { html: true });
         }
       })
       .on('html', {
