@@ -6,13 +6,14 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://insight-forge-site.pages.dev/"
-GEMINI_MODEL = "gemini-3.8-flash"
+GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash"]
 
 GENRES = [
     {
@@ -87,7 +88,7 @@ def fetch_rss(query):
     return items
 
 def call_gemini(prompt):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+    """Call Gemini with retries and automatic model fallback."""
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
@@ -96,47 +97,67 @@ def call_gemini(prompt):
             "responseMimeType": "application/json",
         },
     }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(body).encode("utf-8"),
-        headers={
-            "Content-Type": "application/json",
-            "x-goog-api-key": os.environ["GEMINI_API_KEY"],
-        },
-        method="POST",
-    )
-    # Gemini can occasionally return transient 5xx errors when the service is busy.
-    # Retry those failures with exponential backoff so a temporary outage does not
-    # make the scheduled publishing job fail.
-    last_error = None
-    for attempt in range(1, 6):
-        try:
-            with urllib.request.urlopen(req, timeout=180) as r:
-                payload = json.loads(r.read().decode("utf-8"))
-            break
-        except urllib.error.HTTPError as exc:
-            details = exc.read().decode("utf-8", errors="replace")
-            last_error = f"HTTP {exc.code}: {details[:1200]}"
-            if exc.code not in (429, 500, 502, 503, 504) or attempt == 5:
-                raise RuntimeError("Gemini API request failed: " + last_error)
-            wait_seconds = 15 * (2 ** (attempt - 1))
-            print(f"Gemini temporary HTTP {exc.code}; retry {attempt}/5 in {wait_seconds}s...")
-            time.sleep(wait_seconds)
-        except (urllib.error.URLError, TimeoutError) as exc:
-            last_error = str(exc)
-            if attempt == 5:
-                raise RuntimeError("Gemini API request failed: " + last_error)
-            wait_seconds = 15 * (2 ** (attempt - 1))
-            print(f"Gemini network error; retry {attempt}/5 in {wait_seconds}s...")
-            time.sleep(wait_seconds)
-    else:
-        raise RuntimeError("Gemini API request failed: " + str(last_error))
 
-    try:
-        text = payload["candidates"][0]["content"]["parts"][0]["text"]
-    except Exception:
-        raise RuntimeError("Gemini returned no usable content: " + json.dumps(payload)[:1500])
-    return json.loads(text)
+    last_error = None
+
+    for model_index, model in enumerate(GEMINI_MODELS):
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(body).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": os.environ["GEMINI_API_KEY"],
+            },
+            method="POST",
+        )
+
+        # Give each model three attempts for transient service/network errors.
+        for attempt in range(1, 4):
+            try:
+                with urllib.request.urlopen(req, timeout=180) as r:
+                    payload = json.loads(r.read().decode("utf-8"))
+                print(f"Gemini model {model} responded successfully.")
+                try:
+                    text = payload["candidates"][0]["content"]["parts"][0]["text"]
+                except Exception:
+                    raise RuntimeError(
+                        "Gemini returned no usable content: " + json.dumps(payload)[:1500]
+                    )
+                return json.loads(text)
+
+            except urllib.error.HTTPError as exc:
+                details = exc.read().decode("utf-8", errors="replace")
+                last_error = f"HTTP {exc.code}: {details[:800]}"
+
+                # Authentication, bad-request, quota and other non-transient errors
+                # should fail immediately instead of hiding the real problem.
+                if exc.code not in (429, 500, 502, 503, 504):
+                    raise RuntimeError("Gemini API request failed: " + last_error)
+
+                if attempt < 3:
+                    wait_seconds = 15 * (2 ** (attempt - 1))
+                    print(
+                        f"Gemini {model} temporarily unavailable (HTTP {exc.code}). "
+                        f"Retry {attempt + 1}/3 in {wait_seconds}s..."
+                    )
+                    time.sleep(wait_seconds)
+
+            except (urllib.error.URLError, TimeoutError) as exc:
+                last_error = str(exc)
+                if attempt < 3:
+                    wait_seconds = 15 * (2 ** (attempt - 1))
+                    print(
+                        f"Gemini {model} network error. "
+                        f"Retry {attempt + 1}/3 in {wait_seconds}s..."
+                    )
+                    time.sleep(wait_seconds)
+
+        if model_index < len(GEMINI_MODELS) - 1:
+            next_model = GEMINI_MODELS[model_index + 1]
+            print(f"Gemini {model} did not recover. Switching to fallback model {next_model}...")
+
+    raise RuntimeError("All Gemini models failed. Last error: " + str(last_error))
 
 def existing_articles():
     try:
