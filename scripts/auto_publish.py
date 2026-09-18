@@ -104,8 +104,33 @@ def call_gemini(prompt):
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=180) as r:
-        payload = json.loads(r.read().decode("utf-8"))
+    # Gemini can occasionally return transient 5xx errors when the service is busy.
+    # Retry those failures with exponential backoff so a temporary outage does not
+    # make the scheduled publishing job fail.
+    last_error = None
+    for attempt in range(1, 6):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                payload = json.loads(r.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as exc:
+            details = exc.read().decode("utf-8", errors="replace")
+            last_error = f"HTTP {exc.code}: {details[:1200]}"
+            if exc.code not in (429, 500, 502, 503, 504) or attempt == 5:
+                raise RuntimeError("Gemini API request failed: " + last_error)
+            wait_seconds = 15 * (2 ** (attempt - 1))
+            print(f"Gemini temporary HTTP {exc.code}; retry {attempt}/5 in {wait_seconds}s...")
+            time.sleep(wait_seconds)
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last_error = str(exc)
+            if attempt == 5:
+                raise RuntimeError("Gemini API request failed: " + last_error)
+            wait_seconds = 15 * (2 ** (attempt - 1))
+            print(f"Gemini network error; retry {attempt}/5 in {wait_seconds}s...")
+            time.sleep(wait_seconds)
+    else:
+        raise RuntimeError("Gemini API request failed: " + str(last_error))
+
     try:
         text = payload["candidates"][0]["content"]["parts"][0]["text"]
     except Exception:
