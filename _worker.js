@@ -20,6 +20,11 @@ export default {
           element.setAttribute('data-insight-forge-theme', 'liquid-glass');
         }
       })
+      .on('body', {
+        element(element) {
+          element.append(`<script>(function(){var n=document.querySelectorAll('nav');n.forEach(function(nav){if(nav.querySelector('a[href*="faq.html"]'))return;var wrap=nav.querySelector('.nav-container');var a=document.createElement('a');a.href='faq.html';a.textContent='FAQ';if(wrap){wrap.appendChild(a)}else{nav.appendChild(a)}})})();</script>`, { html: true });
+        }
+      })
       .transform(response);
 
     const headers = new Headers(themed.headers);
