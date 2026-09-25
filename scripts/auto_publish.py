@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import datetime as dt
+import difflib
 import html
 import json
 import os
@@ -53,6 +54,74 @@ GENRES = [
     },
 ]
 
+SEARCH_QUERIES = {
+    "Technology": [
+        "technology AI hardware smartphones cybersecurity September 2026",
+        "Google Microsoft Apple NVIDIA AI technology September 2026",
+        "chips gadgets software cybersecurity September 2026",
+    ],
+    "Anime": [
+        "anime manga Japan Crunchyroll September 2026",
+        "anime 2026 2027 trailer premiere season September 2026",
+        "Dragon Ball One Piece Naruto anime September 2026",
+    ],
+    "Movies": [
+        "movies cinema Hollywood September 2026",
+        "Marvel MCU Netflix streaming September 2026",
+        "upcoming films trailers box office September 2026",
+    ],
+    "Gaming": [
+        "video games PlayStation Xbox Nintendo PC September 2026",
+        "gaming updates releases trailers September 2026",
+        "Steam esports game updates September 2026",
+    ],
+    "Space": [
+        "NASA SpaceX ISRO September 2026",
+        "JWST astronomy space science September 2026",
+        "Mars Moon ISS launch September 2026",
+    ],
+}
+
+SEARCH_STOPWORDS = {
+    "the","and","for","with","from","that","this","what","when","where","how",
+    "why","new","news","latest","2026","2027","explained","update","guide",
+    "review","details","official","first","reveals","revealed","arrives","launches"
+}
+
+def title_similarity(a, b):
+    clean_a = re.sub(r"[^a-z0-9 ]+", " ", str(a or "").lower())
+    clean_b = re.sub(r"[^a-z0-9 ]+", " ", str(b or "").lower())
+    ta = {x for x in clean_a.split() if len(x) > 2 and x not in SEARCH_STOPWORDS}
+    tb = {x for x in clean_b.split() if len(x) > 2 and x not in SEARCH_STOPWORDS}
+    if not ta or not tb:
+        return difflib.SequenceMatcher(None, clean_a, clean_b).ratio()
+    jaccard = len(ta & tb) / max(1, len(ta | tb))
+    sequence = difflib.SequenceMatcher(None, clean_a, clean_b).ratio()
+    containment = len(ta & tb) / max(1, min(len(ta), len(tb)))
+    return max(jaccard, sequence * 0.8, containment * 0.75)
+
+def resolve_source_url(url):
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; InsightForgeBot/2.0)"},
+        )
+        with urllib.request.urlopen(req, timeout=20) as response:
+            final_url = response.geturl()
+        host = urllib.parse.urlparse(final_url).netloc.lower()
+        if "news.google.com" in host:
+            return ""
+        return final_url
+    except Exception:
+        return ""
+
+def source_domain(url):
+    try:
+        host = urllib.parse.urlparse(url).netloc.lower()
+        return host[4:] if host.startswith("www.") else host
+    except Exception:
+        return ""
+
 def read_file(path):
     with open(os.path.join(ROOT, path), "r", encoding="utf-8") as f:
         return f.read()
@@ -83,8 +152,15 @@ def fetch_rss(query):
         desc = re.sub(r"\\s+", " ", html.unescape(desc)).strip()
         source_el = item.find("source")
         source = source_el.text.strip() if source_el is not None and source_el.text else ""
-        if title:
-            items.append({"title": title, "link": link, "date": pub, "source": source, "snippet": desc[:600]})
+        if title and link:
+            direct = resolve_source_url(link)
+            items.append({
+                "title": title,
+                "link": direct or link,
+                "date": pub,
+                "source": source or source_domain(direct) or "Google News result",
+                "snippet": desc[:700],
+            })
     return items
 
 def call_gemini(prompt):
@@ -218,7 +294,7 @@ Return ONLY valid JSON matching this exact structure:
 Exactly 5 objects, one per genre. Slugs must be unique and must not reuse an existing article slug.
 """
 
-def validate_article(a):
+def validate_article(a, existing_titles=None):
     required = ["genre", "title", "slug", "description", "dek", "body_html", "source_urls"]
     if any(not a.get(k) for k in required):
         return False
@@ -229,11 +305,15 @@ def validate_article(a):
         return False
     if a["genre"] not in [g["name"] for g in GENRES]:
         return False
-    if not isinstance(a["source_urls"], list) or not a["source_urls"]:
+    if not isinstance(a["source_urls"], list) or len(a["source_urls"]) < 2:
         return False
     for u in a["source_urls"]:
         if not isinstance(u, str) or not u.startswith("http"):
             return False
+    if len({source_domain(u) for u in a["source_urls"]}) < 2:
+        return False
+    if existing_titles and max((title_similarity(a["title"], old) for old in existing_titles), default=0) >= 0.78:
+        return False
     return True
 
 def article_html(a, genre, today):
@@ -337,12 +417,21 @@ def main():
 
     feeds = {}
     for g in GENRES:
-        print("Fetching trends:", g["name"])
-        try:
-            feeds[g["name"]] = fetch_rss(g["query"])
-        except Exception as e:
-            print("RSS failed:", g["name"], e)
-            feeds[g["name"]] = []
+        print("Fetching multi-source trends:", g["name"])
+        combined = []
+        seen_links = set()
+        for query in SEARCH_QUERIES.get(g["name"], [g["query"]]):
+            try:
+                results = fetch_rss(query)
+                for item in results:
+                    link = item.get("link", "")
+                    if link and link not in seen_links:
+                        seen_links.add(link)
+                        combined.append(item)
+            except Exception as e:
+                print("RSS failed:", g["name"], query, e)
+        feeds[g["name"]] = combined[:24]
+        print("  research leads:", len(feeds[g["name"]]), "from", len({x.get("source","") for x in feeds[g["name"]]}), "sources")
 
     prompt = build_prompt(feeds, titles, today)
     print("Generating five articles with Gemini...")
@@ -356,7 +445,7 @@ def main():
     seen_slugs = set(urls)
     valid = []
     for a in articles:
-        if a["genre"] in seen_genres or a["slug"] + ".html" in seen_slugs or not validate_article(a):
+        if a["genre"] in seen_genres or a["slug"] + ".html" in seen_slugs or not validate_article(a, titles):
             raise RuntimeError("Generated article failed validation: " + json.dumps(a)[:1200])
         seen_genres.add(a["genre"])
         seen_slugs.add(a["slug"] + ".html")
