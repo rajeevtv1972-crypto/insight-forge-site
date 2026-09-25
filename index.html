@@ -497,14 +497,14 @@ footer a{color:#d7e4ff;margin:0 8px}
 
   <section id="trending">
     <div class="section-head">
-      <div><h2>📈 Trending This Week</h2><p>Recent stories with the most momentum based on fresh publishing activity.</p></div>
+      <div><h2>📈 Trending on Insight Forge</h2><p>Live signals from article views, clicks, internal search interest and freshness.</p></div>
     </div>
     <div class="trending-shell">
       <div id="trending-list" class="trending-list"><div class="loading">Building this week's picks…</div></div>
       <div class="trending-note">
-        <div class="mini">Inside Insight Forge</div>
-        <h3>Five topics. One front page.</h3>
-        <p>Use the category rails to jump directly into the subjects you follow, then return to Latest for the newest updates.</p>
+        <div class="mini">INSIDE INSIGHT FORGE</div>
+        <h3>What readers are opening right now.</h3>
+        <p>The ranking learns from engagement while still giving fresh stories a chance to surface.</p>
         <a href="latest-news.html">Explore the full feed →</a>
       </div>
     </div>
@@ -607,37 +607,34 @@ footer a{color:#d7e4ff;margin:0 8px}
     document.getElementById('category-sections').appendChild(section);
   }
 
-  function renderTrending(items, heroItem){
-    const weekAgo = new Date();
-    weekAgo.setDate(weekAgo.getDate() - 7);
-    const pool = items.filter(item => new Date(String(item.date) + 'T23:59:59') >= weekAgo && item.url !== heroItem.url);
-
-    const selected = [];
-    const usedCategories = new Set();
-
-    for(const item of pool){
-      if(!usedCategories.has(item.category)){
-        selected.push(item);
-        usedCategories.add(item.category);
-      }
-      if(selected.length === 5) break;
-    }
-
-    if(selected.length < 5){
+  function renderTrending(items, heroItem, liveItems){
+    let selected = Array.isArray(liveItems) ? liveItems.filter(item=>item.url!==heroItem.url).slice(0,5) : [];
+    if(!selected.length){
+      const weekAgo = new Date();
+      weekAgo.setDate(weekAgo.getDate() - 7);
+      const pool = items.filter(item => new Date(String(item.date) + 'T23:59:59') >= weekAgo && item.url !== heroItem.url);
+      const usedCategories = new Set();
+      selected = [];
       for(const item of pool){
-        if(selected.some(x=>x.url===item.url)) continue;
-        selected.push(item);
-        if(selected.length === 5) break;
+        if(!usedCategories.has(item.category)){selected.push(item);usedCategories.add(item.category);}
+        if(selected.length===5)break;
+      }
+      if(selected.length<5){
+        for(const item of pool){if(selected.some(x=>x.url===item.url))continue;selected.push(item);if(selected.length===5)break;}
       }
     }
 
-    const list = document.getElementById('trending-list');
-    list.innerHTML = selected.length ? selected.map((item,index)=>
-      '<a class="rank-card" href="' + escapeHTML(item.url) + '">' +
+    const list=document.getElementById('trending-list');
+    list.innerHTML=selected.length?selected.map((item,index)=>{
+      const stats=item.stats;
+      const signal=stats && (stats.views||stats.clicks||stats.searchHits)
+        ? ('🔥 '+(Number(stats.views||0)+Number(stats.clicks||0))+' engagement')
+        : 'Freshness signal';
+      return '<a class="rank-card" href="' + escapeHTML(item.url) + '">' +
         '<span class="rank">' + (index+1) + '</span>' +
-        '<div><h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.category) + ' · ' + escapeHTML(formatDate(item.date)) + '</p></div>' +
-      '</a>'
-    ).join('') : '<div class="empty">No stories were published in the last seven days.</div>';
+        '<div><h3>' + escapeHTML(item.title) + '</h3><p>' + escapeHTML(item.category) + ' · ' + escapeHTML(formatDate(item.date)) + ' · ' + escapeHTML(signal) + '</p></div>' +
+      '</a>';
+    }).join('') : '<div class="empty">No stories are available for trending yet.</div>';
   }
 
   async function init(){
@@ -665,7 +662,12 @@ footer a{color:#d7e4ff;margin:0 8px}
         renderCategory(categoryItems, category);
       }
 
-      renderTrending(items, heroItem);
+      let liveTrending = [];
+      try{
+        const tr=await fetch('/api/trending',{cache:'no-store'});
+        if(tr.ok){const data=await tr.json();liveTrending=Array.isArray(data.items)?data.items:[];}
+      }catch(e){}
+      renderTrending(items, heroItem, liveTrending);
     }catch(error){
       document.getElementById('hero-slot').innerHTML = '<div class="empty">The featured story could not be loaded right now. <a class="view-all" href="latest-news.html">Open Latest →</a></div>';
       document.getElementById('latest-grid').innerHTML = '<div class="empty">Latest stories could not be loaded right now. <a class="view-all" href="latest-news.html">Open Latest →</a></div>';
