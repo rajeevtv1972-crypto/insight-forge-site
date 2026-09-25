@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">TypeBloom featured project artwork</title>
+<desc id="desc">A calm green and blue promotional illustration for TypeBloom, a free browser-based typing practice tool.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#123c2c"/>
+    <stop offset="55%" stop-color="#2f7d57"/>
+    <stop offset="100%" stop-color="#0e7490"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="74%" cy="20%" r="65%">
+    <stop offset="0%" stop-color="#d8ffe8" stop-opacity=".45"/>
+    <stop offset="100%" stop-color="#d8ffe8" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<rect width="1200" height="675" fill="url(#glow)"/>
+<circle cx="1015" cy="125" r="105" fill="#fff" opacity=".08"/>
+<circle cx="1080" cy="535" r="170" fill="#fff" opacity=".06"/>
+<path d="M0 560 C230 445 430 650 650 535 S1040 385 1220 465" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="5"/>
+<path d="M160 530 Q180 415 230 355 Q270 300 320 354 Q350 387 330 430 Q290 500 300 555" fill="#d8ffe8" opacity=".09"/>
+<path d="M242 385 Q192 323 134 314 Q166 380 242 404" fill="#d8ffe8" opacity=".20"/>
+<path d="M295 365 Q346 294 410 300 Q383 365 305 394" fill="#d8ffe8" opacity=".18"/>
+<rect x="575" y="235" width="500" height="205" rx="30" fill="#fff" opacity=".10" stroke="#fff" stroke-opacity=".30" stroke-width="2"/>
+<g fill="#fff" fill-opacity=".80">
+  <rect x="610" y="273" width="42" height="32" rx="7"/><rect x="660" y="273" width="42" height="32" rx="7"/><rect x="710" y="273" width="42" height="32" rx="7"/><rect x="760" y="273" width="42" height="32" rx="7"/><rect x="810" y="273" width="42" height="32" rx="7"/><rect x="860" y="273" width="42" height="32" rx="7"/><rect x="910" y="273" width="42" height="32" rx="7"/><rect x="960" y="273" width="42" height="32" rx="7"/>
+  <rect x="622" y="313" width="42" height="32" rx="7"/><rect x="672" y="313" width="42" height="32" rx="7"/><rect x="722" y="313" width="42" height="32" rx="7"/><rect x="772" y="313" width="42" height="32" rx="7"/><rect x="822" y="313" width="42" height="32" rx="7"/><rect x="872" y="313" width="42" height="32" rx="7"/><rect x="922" y="313" width="42" height="32" rx="7"/><rect x="972" y="313" width="42" height="32" rx="7"/>
+  <rect x="645" y="353" width="52" height="32" rx="7"/><rect x="705" y="353" width="52" height="32" rx="7"/><rect x="765" y="353" width="52" height="32" rx="7"/><rect x="825" y="353" width="52" height="32" rx="7"/><rect x="885" y="353" width="52" height="32" rx="7"/>
+  <rect x="730" y="393" width="235" height="26" rx="13"/>
+</g>
+<text x="76" y="100" fill="#d8ffe8" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="800" letter-spacing="4">FEATURED PROJECT</text>
+<text x="76" y="190" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="84" font-weight="900">TypeBloom</text>
+<text x="76" y="240" fill="#d8ffe8" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="700">A calmer way to get faster.</text>
+<text x="76" y="605" fill="#fff" fill-opacity=".76" font-family="Arial,Helvetica,sans-serif" font-size="21">FREE BROWSER TYPING PRACTICE · WPM · ACCURACY · DAILY CHALLENGES</text>
+</svg>
