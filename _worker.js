@@ -23,7 +23,7 @@ export default {
       })
       .on('body', {
         element(element) {
-          element.append(`<script>(function(){var n=document.querySelectorAll('nav');n.forEach(function(nav){if(nav.querySelector('a[href*="faq.html"]'))return;var wrap=nav.querySelector('.nav-container');var a=document.createElement('a');a.href='faq.html';a.textContent='FAQ';if(wrap){wrap.appendChild(a)}else{nav.appendChild(a)}})})();</script>`, { html: true });
+          element.append(`<script>(function(){var navs=document.querySelectorAll('nav');navs.forEach(function(nav){var wrap=nav.querySelector('.nav-container')||nav;if(!wrap.querySelector('a[data-search-link]')){var s=document.createElement('a');s.href='search.html';s.textContent='🔍 Search';s.setAttribute('data-search-link','true');s.setAttribute('aria-label','Search Insight Forge');wrap.appendChild(s)}if(!wrap.querySelector('a[href*="faq.html"]')){var f=document.createElement('a');f.href='faq.html';f.textContent='FAQ';wrap.appendChild(f)}})})();</script>`, { html: true });
         }
       })
       .transform(response);
