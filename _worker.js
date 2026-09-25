@@ -356,6 +356,17 @@ ${articleMeta.datePublished ? `<meta property="article:published_time" content="
           element.setAttribute('data-insight-forge-theme', 'liquid-glass');
         }
       })
+      .on('main img', {
+        element(element) {
+          if (articleMeta && !element.getAttribute('data-if-article-image')) {
+            element.setAttribute('src', articleMeta.image);
+            element.setAttribute('alt', articleMeta.title);
+            element.setAttribute('loading', 'eager');
+            element.setAttribute('decoding', 'async');
+            element.setAttribute('data-if-article-image', 'true');
+          }
+        }
+      })
       .on('main', {
         element(element) {
           if (breadcrumbMarkup) element.prepend(breadcrumbMarkup, { html: true });
