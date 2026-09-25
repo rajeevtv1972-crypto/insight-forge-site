@@ -1,0 +1,48 @@
+name: Validate Insight Forge Automation
+
+on:
+  push:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/**"
+      - "page-sitemap.xml"
+      - "image-sitemap.xml"
+  pull_request:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/**"
+      - "page-sitemap.xml"
+      - "image-sitemap.xml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python syntax check
+        run: |
+          python3 -m py_compile scripts/auto_publish.py
+          python3 -m py_compile scripts/auto_enhance.py
+
+      - name: XML sitemap validation
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          for path in ["page-sitemap.xml", "image-sitemap.xml"]:
+              ET.parse(path)
+              print("XML OK:", path)
+          PY
+
+      - name: YAML sanity
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          text = Path(".github/workflows/auto-article.yml").read_text(encoding="utf-8")
+          assert "scripts/auto_publish.py" in text
+          assert "scripts/auto_enhance.py" in text
+          print("Automation workflow references verified.")
+          PY
