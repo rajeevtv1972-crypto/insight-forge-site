@@ -121,6 +121,7 @@ export default {
 
     let articleMeta = null;
     let relatedHtml = '';
+    let articleHtml = '';
 
     if (isLikelyArticle) {
       try {
@@ -131,7 +132,7 @@ export default {
           const item = Array.isArray(feed) ? feed.find(entry => entry && entry.url === normalizedPath) : null;
 
           if (item) {
-            const articleHtml = await response.clone().text();
+            articleHtml = await response.clone().text();
             const description = extractMeta(articleHtml, 'description') ||
               item.description ||
               item.alt ||
@@ -164,6 +165,55 @@ export default {
         relatedHtml = '';
       }
     }
+
+
+    function detectTopic(meta, sourceHtml) {
+      const text = normalize((meta?.title || '') + ' ' + (meta?.description || '') + ' ' + (meta?.keywords || '') + ' ' + (sourceHtml || '').slice(0, 12000));
+      const topics = [
+        {name:'Marvel', patterns:['marvel','avengers','mcu','endgame','doomsday'], url:'/movies.html'},
+        {name:'Dragon Ball', patterns:['dragon ball','beerus','goku','vegeta'], url:'/anime.html'},
+        {name:'NASA', patterns:['nasa','space station','artemis','perseverance','hubble'], url:'/space-science.html'},
+        {name:'Apple', patterns:['iphone','ipad','macbook','apple'], url:'/tech.html'},
+        {name:'AI & Machine Learning', patterns:['artificial intelligence','machine learning','generative ai','ai model','ai compute','gemini','copilot'], url:'/tech.html'},
+        {name:'PC & Gaming', patterns:['playstation','xbox','nintendo','pc gaming','steam'], url:'/gaming.html'}
+      ];
+      return topics.find(function(topic) {
+        return topic.patterns.some(function(pattern) { return text.includes(pattern); });
+      }) || null;
+    }
+
+    function buildBreadcrumbData(meta, topic, pageUrl) {
+      const categoryMap = {Anime:'anime.html',Movies:'movies.html',Technology:'tech.html',Space:'space-science.html',Gaming:'gaming.html'};
+      const list = [
+        {'@type':'ListItem',position:1,name:'Home',item:new URL('/',pageUrl.origin).href},
+        {'@type':'ListItem',position:2,name:meta.category || 'Stories',item:new URL(categoryMap[meta.category] || 'latest-news.html',pageUrl.origin + '/').href}
+      ];
+      if (topic) list.push({'@type':'ListItem',position:list.length + 1,name:topic.name,item:new URL(topic.url.replace(/^\//,''),pageUrl.origin + '/').href});
+      list.push({'@type':'ListItem',position:list.length + 1,name:meta.title});
+      return {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:list};
+    }
+
+    const breadcrumbTopic = articleMeta ? detectTopic(articleMeta, articleHtml) : null;
+    const breadcrumbData = articleMeta ? buildBreadcrumbData(articleMeta, breadcrumbTopic, url) : null;
+    const breadcrumbStyles = articleMeta ? [
+      '<style>',
+      '.if-breadcrumb{max-width:1180px;margin:0 auto 18px;padding:11px 15px;border-radius:16px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.74);box-shadow:0 8px 26px rgba(40,55,80,.07);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);color:#667085;font-size:.78rem;line-height:1.4;overflow-x:auto;white-space:nowrap}',
+      '.if-breadcrumb a{color:#245dc9 !important;font-weight:800}',
+      '.if-breadcrumb .if-sep{margin:0 7px;color:#9aa4b5}',
+      '.if-breadcrumb .if-current{color:#475467;font-weight:800}',
+      '@media(max-width:720px){.if-breadcrumb{margin:0 0 14px;border-radius:14px;font-size:.75rem}}',
+      '</style>'
+    ].join('') : '';
+
+    const breadcrumbMarkup = articleMeta ? [
+      '<div class="if-breadcrumb" aria-label="Breadcrumb">',
+      '<a href="/">Home</a><span class="if-sep" aria-hidden="true">→</span>',
+      '<a href="/', escapeAttr(({'Anime':'anime.html','Movies':'movies.html','Technology':'tech.html','Space':'space-science.html','Gaming':'gaming.html'})[articleMeta.category] || 'latest-news.html'), '">',
+      escapeText(articleMeta.category || 'Stories'), '</a>',
+      breadcrumbTopic ? '<span class="if-sep" aria-hidden="true">→</span><a href="' + escapeAttr(breadcrumbTopic.url) + '">' + escapeText(breadcrumbTopic.name) + '</a>' : '',
+      '<span class="if-sep" aria-hidden="true">→</span><span class="if-current">',
+      escapeText(articleMeta.title), '</span></div>'
+    ].join('') : '';
 
     const relatedStyles = relatedHtml ? `
 <style>
@@ -295,7 +345,7 @@ ${articleMeta.datePublished ? `<meta property="article:published_time" content="
 <meta name="twitter:title" content="${escapeAttr(articleMeta.title)}">
 <meta name="twitter:description" content="${escapeAttr(articleMeta.description)}">
 <meta name="twitter:image" content="${escapeAttr(articleMeta.image)}">
-<meta name="twitter:url" content="${escapeAttr(articleMeta.url)}">${relatedStyles}`,
+<meta name="twitter:url" content="${escapeAttr(articleMeta.url)}">${breadcrumbStyles}${relatedStyles}${breadcrumbData ? '<script type="application/ld+json">' + JSON.stringify(breadcrumbData) + '</script>' : ''}`,
               { html: true }
             );
           }
@@ -304,6 +354,11 @@ ${articleMeta.datePublished ? `<meta property="article:published_time" content="
       .on('html', {
         element(element) {
           element.setAttribute('data-insight-forge-theme', 'liquid-glass');
+        }
+      })
+      .on('main', {
+        element(element) {
+          if (breadcrumbMarkup) element.prepend(breadcrumbMarkup, { html: true });
         }
       })
       .on('div#disqus_thread', {
