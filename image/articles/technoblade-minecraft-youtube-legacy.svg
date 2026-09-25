@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Technoblade Minecraft YouTube legacy editorial artwork</title>
+<desc id="desc">Original pixel-inspired pink pig silhouette, Minecraft landscape, crown and YouTube-style play symbol representing Technoblade's gaming legacy.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#160d29"/><stop offset=".52" stop-color="#52215f"/><stop offset="1" stop-color="#211a4d"/></linearGradient>
+ <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9acb"/><stop offset="1" stop-color="#e04d92"/></linearGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="980" cy="155" r="125" fill="url(#sun)" opacity=".78"/>
+<path d="M0 495 L155 405 300 470 445 372 600 465 760 350 925 455 1080 365 1200 425 1200 675 0 675Z" fill="#11142d"/>
+<g opacity=".85">
+ <rect x="80" y="440" width="170" height="26" fill="#2e2750"/><rect x="270" y="405" width="120" height="34" fill="#2e2750"/><rect x="410" y="435" width="200" height="30" fill="#2e2750"/><rect x="650" y="400" width="160" height="30" fill="#2e2750"/><rect x="845" y="430" width="250" height="30" fill="#2e2750"/>
+</g>
+<!-- pixel pig -->
+<g transform="translate(220 215)">
+ <rect x="110" y="62" width="300" height="190" fill="#e889b7"/>
+ <rect x="66" y="103" width="80" height="116" fill="#e889b7"/>
+ <rect x="355" y="117" width="95" height="105" fill="#df74a9"/>
+ <rect x="126" y="26" width="62" height="68" fill="#e889b7"/><rect x="324" y="26" width="62" height="68" fill="#e889b7"/>
+ <rect x="92" y="124" width="34" height="34" fill="#251631"/><rect x="387" y="147" width="24" height="24" fill="#5e244e"/>
+ <rect x="140" y="177" width="60" height="42" fill="#f4b6d3"/><rect x="224" y="177" width="60" height="42" fill="#f4b6d3"/>
+ <rect x="150" y="189" width="16" height="16" fill="#6c3556"/><rect x="250" y="189" width="16" height="16" fill="#6c3556"/>
+ <rect x="140" y="230" width="42" height="70" fill="#c95f91"/><rect x="310" y="230" width="42" height="70" fill="#c95f91"/>
+</g>
+<!-- crown -->
+<g transform="translate(335 105)">
+ <path d="M0 72 L25 0 94 56 155 0 188 72Z" fill="#ffd85f" stroke="#8c5c25" stroke-width="8"/>
+ <rect x="8" y="68" width="174" height="28" rx="8" fill="#f0b52f"/>
+ <circle cx="94" cy="50" r="9" fill="#fff4a8"/>
+</g>
+<rect x="58" y="48" width="530" height="112" rx="22" fill="#090717" opacity=".80"/>
+<text x="86" y="94" fill="#ffc1df" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="900" letter-spacing="3">MINECRAFT • CREATOR HISTORY</text>
+<text x="86" y="137" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="900">Technoblade</text>
+<text x="730" y="590" fill="#ffe5f3" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="850" text-anchor="middle">TECHNO • PVP • HYPIXEL • DREAM SMP • LEGACY</text>
+</svg>
