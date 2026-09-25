@@ -1,286 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- NEW BLOG -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://insight-forge-site.pages.dev/avengers-doomsday-runtime-confirmed</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/avengers-doomsday-runtime-confirmed.jpg</image:loc>
     </image:image>
   </url>
-
-  <!-- EXISTING BLOGS -->
   <url>
     <loc>https://insight-forge-site.pages.dev/ddr5-prices-2026</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/ddr5-prices-2026.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/upcoming-anime-2026</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/upcoming-anime-2026.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/avengers-doomsday-2026</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/avengers-doomsday-2026.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/avatar3-boxoffice-2026</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/avatar3-boxoffice-2026.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/indian-space-program-explained</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/indian-space-program.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/one-piece-season-1-summary</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/one-piece-season-1.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/one-piece-season-2-preview</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/one-piece-season-2.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/tech-news-weekly-2026-01-04</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/tech-news-weekly-2026-01-04.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/nasa-perseverance-rover-mars</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/nasa-perseverance-rover.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/mars-sample-return-mission-explained</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/mars-sample-return.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/human-mission-to-mars-explained</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/human-mission-to-mars.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/life-on-mars-evidence-debate</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/life-on-mars.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/upcoming-isekai-2026</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/upcoming-isekai-2026.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/ces-2026-highlights</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/ces-2026-highlights.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/wolf-moon-explained</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/wolf-moon.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/naruto-anniversary-specials</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/naruto-anniversary.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/oshi-no-ko-season3-premiere</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/oshi-no-ko-season3.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/nvidia-vera-rubin-explained</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/nvidia-vera-rubin.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/perseverance-potential-biosignature</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/perseverance-biosignature.jpg</image:loc>
     </image:image>
   </url>
-
   <url>
     <loc>https://insight-forge-site.pages.dev/ces-robotaxis-humanoids-roundup</loc>
     <image:image>
       <image:loc>https://insight-forge-site.pages.dev/images/ces-robotaxis-humanoids.jpg</image:loc>
     </image:image>
   </url>
-
-<url>
-  <loc>https://insight-forge-site.pages.dev/winter-anime-2026-updates</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/winter-anime-2026-updates.jpg</image:loc>
-  </image:image>
-</url>
-
-<url>
-  <loc>https://insight-forge-site.pages.dev/animejapan-2026-highlights</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/animejapan-2026-highlights.jpg</image:loc>
-  </image:image>
-</url>
-
-<url>
-  <loc>https://insight-forge-site.pages.dev/tech-news-2</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/tech-news-2.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/spiderman-brand-new-day-explained</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/spiderman-brand-new-day.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/spiderman-complete-timeline-explained</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/spiderman-timeline.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/spiderman-villains-complete-timeline</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/spiderman-villains-timeline.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/marvel-multiverse-complete-guide</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/marvel-multiverse-guide.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/marvel-secret-wars-complete-timeline</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/marvel-secret-wars.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/mcu-phase-by-phase-complete-breakdown</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/mcu-phases-timeline.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/gaming-new-releases-2026</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/images/gaming-new-releases-2026.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/where-winds-meet-free-to-play-success</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/where-winds-meet-hero.jpg</image:loc>
-  </image:image>
-</url>
-<url>
   <url>
-  <loc>https://insight-forge-site.pages.dev/gaming-indie-spotlight-2026</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/gaming-indie-spotlight-2026.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/top-10-pc-games-2026</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/top-10-pc-games-2026.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/ces-ai-news-today</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/ces-ai-news-today.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/tech-news-3</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/tech-news-3.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/iphone-18-leaks</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/iphone-18-leaks.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/dune-part-two-review</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/dune-part-two-review.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/oppenheimer-review</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/oppenheimer-review.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/intel-panther-lake-rivals</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/intel-panther-lake-rivals.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/dragon-ball-super-moro-beerus</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/dragon-ball-super-moro-beerus.jpg</image:loc>
-  </image:image>
-</url>
-<url>
-  <loc>https://insight-forge-site.pages.dev/dragon-ball-super-finale</loc>
-  <image:image>
-    <image:loc>https://insight-forge-site.pages.dev/image/dragon-ball-super-finale.jpg</image:loc>
-  </image:image>
-</url>
-
-
+    <loc>https://insight-forge-site.pages.dev/winter-anime-2026-updates</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/winter-anime-2026-updates.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/animejapan-2026-highlights</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/animejapan-2026-highlights.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/tech-news-2</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/tech-news-2.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/spiderman-brand-new-day-explained</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/spiderman-brand-new-day.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/spiderman-complete-timeline-explained</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/spiderman-timeline.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/spiderman-villains-complete-timeline</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/spiderman-villains-timeline.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/marvel-multiverse-complete-guide</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/marvel-multiverse-guide.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/marvel-secret-wars-complete-timeline</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/marvel-secret-wars.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/mcu-phase-by-phase-complete-breakdown</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/mcu-phases-timeline.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/gaming-new-releases-2026</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/images/gaming-new-releases-2026.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/where-winds-meet-free-to-play-success</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/where-winds-meet-hero.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/gaming-indie-spotlight-2026</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/gaming-indie-spotlight-2026.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/top-10-pc-games-2026</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/top-10-pc-games-2026.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/ces-ai-news-today</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/ces-ai-news-today.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/tech-news-3</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/tech-news-3.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/iphone-18-leaks</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/iphone-18-leaks.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/dune-part-two-review</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/dune-part-two-review.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/oppenheimer-review</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/oppenheimer-review.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/intel-panther-lake-rivals</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/intel-panther-lake-rivals.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/dragon-ball-super-moro-beerus</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/dragon-ball-super-moro-beerus.jpg</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://insight-forge-site.pages.dev/dragon-ball-super-finale</loc>
+    <image:image>
+      <image:loc>https://insight-forge-site.pages.dev/image/dragon-ball-super-finale.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
