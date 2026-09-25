@@ -2,6 +2,77 @@ const THEME_HREF = '/css/liquid-glass.css?v=1';
 const FAVICON_HREF = '/favicon.svg?v=1';
 const SITE_NAME = 'Insight Forge';
 
+const STATS_PREFIX = 'insight:v1:article:';
+const TRACKABLE_ARTICLE = /\.html$/i;
+
+function statsKey(pathname) {
+  return STATS_PREFIX + encodeURIComponent(pathname.replace(/^\//, ''));
+}
+
+function looksLikeBot(request) {
+  const ua = request.headers.get('user-agent') || '';
+  return /bot|crawler|spider|slurp|headless|lighthouse|pagespeed|preview/i.test(ua);
+}
+
+async function incrementStat(env, pathname, field) {
+  if (!env.INSIGHT_STATS || !pathname || !TRACKABLE_ARTICLE.test(pathname)) return false;
+  try {
+    const key = statsKey(pathname);
+    const current = await env.INSIGHT_STATS.get(key, { type: 'json' }) || {};
+    current.views = Number(current.views || 0);
+    current.clicks = Number(current.clicks || 0);
+    current.searchHits = Number(current.searchHits || 0);
+    current.updatedAt = Date.now();
+    if (field === 'views') current.views += 1;
+    if (field === 'clicks') current.clicks += 1;
+    if (field === 'searchHits') current.searchHits += 1;
+    await env.INSIGHT_STATS.put(key, JSON.stringify(current), { expirationTtl: 60 * 60 * 24 * 400 });
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+async function trendingFromStats(env, feed) {
+  if (!env.INSIGHT_STATS) return { source: 'fallback', items: [] };
+  const rows = await Promise.all(feed.map(async item => {
+    if (!item?.url) return null;
+    const raw = await env.INSIGHT_STATS.get(statsKey('/' + item.url), { type: 'json' }).catch(() => null);
+    const stats = raw || {};
+    const published = new Date(String(item.date || '') + 'T23:59:59');
+    const ageDays = Number.isNaN(published.getTime()) ? 30 : Math.max(0, (Date.now() - published.getTime()) / 86400000);
+    const freshness = Math.max(0, 28 - ageDays) * 0.9;
+    const views = Number(stats.views || 0);
+    const clicks = Number(stats.clicks || 0);
+    const searchHits = Number(stats.searchHits || 0);
+    const score = views + clicks * 3 + searchHits * 2 + freshness;
+    return { item, stats: { views, clicks, searchHits }, score };
+  }));
+  const usable = rows.filter(Boolean);
+  const selected = [];
+  const usedCategories = new Set();
+
+  for (const row of usable.sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))) {
+    if (row.score <= 0) continue;
+    if (!usedCategories.has(row.item.category)) {
+      selected.push(row);
+      usedCategories.add(row.item.category);
+    }
+    if (selected.length === 5) break;
+  }
+  if (selected.length < 5) {
+    for (const row of usable.sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))) {
+      if (selected.some(x => x.item.url === row.item.url)) continue;
+      selected.push(row);
+      if (selected.length === 5) break;
+    }
+  }
+  return {
+    source: 'live',
+    items: selected.map(row => ({...row.item, trendScore: Math.round(row.score * 10) / 10, stats: row.stats}))
+  };
+}
+
 function escapeAttr(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -107,6 +178,36 @@ function relatedMarkup(items, url) {
 
 export default {
   async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === '/api/track' && request.method === 'POST') {
+      try {
+        const payload = await request.json();
+        const target = String(payload?.url || '');
+        if (!target.startsWith('/')) return new Response(JSON.stringify({ok:false}), {status:400, headers:{'content-type':'application/json'}});
+        const event = String(payload?.event || '');
+        const field = event === 'view' ? 'views' : event === 'search' ? 'searchHits' : 'clicks';
+        await incrementStat(env, target, field);
+      } catch (error) {}
+      return new Response(JSON.stringify({ok:true}), {headers:{'content-type':'application/json','cache-control':'no-store'}});
+    }
+
+    if (url.pathname === '/api/trending' && request.method === 'GET') {
+      try {
+        const feedResponse = await env.ASSETS.fetch(new Request(new URL('/latest-news.json', request.url)));
+        if (!feedResponse.ok) throw new Error('feed unavailable');
+        const feed = await feedResponse.json();
+        const live = await trendingFromStats(env, Array.isArray(feed) ? feed : []);
+        if (live.items.length) {
+          return new Response(JSON.stringify(live), {headers:{'content-type':'application/json','cache-control':'public, max-age=60, stale-while-revalidate=300'}});
+        }
+        const fallback = (Array.isArray(feed) ? feed.slice() : []).sort((a,b) => String(b.date).localeCompare(String(a.date))).slice(0,5);
+        return new Response(JSON.stringify({source:'fallback',items:fallback}), {headers:{'content-type':'application/json','cache-control':'public, max-age=60'}});
+      } catch (error) {
+        return new Response(JSON.stringify({source:'fallback',items:[]}), {status:200, headers:{'content-type':'application/json','cache-control':'no-store'}});
+      }
+    }
+
     const response = await env.ASSETS.fetch(request);
     const contentType = response.headers.get('content-type') || '';
 
@@ -158,6 +259,10 @@ export default {
 
             const related = relatedStories(articleMeta, Array.isArray(feed) ? feed : [], keywords);
             relatedHtml = relatedMarkup(related, url);
+
+            if (!looksLikeBot(request)) {
+              await incrementStat(env, pathname, 'views');
+            }
           }
         }
       } catch (error) {
