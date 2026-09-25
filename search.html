@@ -226,12 +226,12 @@ footer a{color:#d7e4ff;margin:0 8px}
       const item=x.item;
       const desc=item.description||item.alt||'Explore this Insight Forge story.';
       return '<article class="result-card">'+
-        '<a href="'+esc(item.url)+'" aria-label="'+esc(item.title)+'"><img class="result-image" src="'+esc(item.image)+'" alt="'+esc(item.alt||item.title)+'" loading="lazy" decoding="async"></a>'+
+        '<a href="'+esc(item.url)+'" data-search-result="true" data-search-query="'+esc(query)+'" aria-label="'+esc(item.title)+'"><img class="result-image" src="'+esc(item.image)+'" alt="'+esc(item.alt||item.title)+'" loading="lazy" decoding="async"></a>'+
         '<div class="result-body">'+
           '<div class="result-top"><span class="result-cat">'+esc(item.category)+'</span><time class="result-date" datetime="'+esc(item.date)+'">'+esc(dateLabel(item.date))+'</time></div>'+
-          '<h3 class="result-title"><a href="'+esc(item.url)+'">'+esc(item.title)+'</a></h3>'+
+          '<h3 class="result-title"><a data-search-result="true" data-search-query="'+esc(query)+'" href="'+esc(item.url)+'">'+esc(item.title)+'</a></h3>'+
           '<p class="result-desc">'+esc(desc)+'</p>'+
-          '<a class="result-link" href="'+esc(item.url)+'">Read story →</a>'+
+          '<a class="result-link" data-search-result="true" data-search-query="'+esc(query)+'" href="'+esc(item.url)+'">Read story →</a>'+
         '</div>'+
       '</article>';
     }).join('');
@@ -251,7 +251,7 @@ footer a{color:#d7e4ff;margin:0 8px}
     }
   }
 
-  form.addEventListener('submit',function(e){e.preventDefault();run(input.value);});
+  form.addEventListener('submit',function(e){e.preventDefault();var q=input.value.trim();if(q){try{navigator.sendBeacon('/api/track',new Blob([JSON.stringify({event:'search',url:'/search.html',query:q})],{type:'application/json'}));}catch(err){}}run(q);});
   document.querySelectorAll('.suggestion').forEach(function(btn){
     btn.addEventListener('click',function(){run(btn.dataset.query);});
   });
