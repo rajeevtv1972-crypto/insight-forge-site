@@ -262,7 +262,8 @@ Each article must:
 - use short paragraphs and 2-4 <h2> subheadings
 - include a concise opening paragraph
 - include a final takeaway paragraph
-- include a "Sources" section with ONLY the supplied source URLs relevant to that article
+- include a "Sources" section with ONLY the supplied direct publisher URLs relevant to that article
+- cite at least TWO different publishers when the research packet contains enough independent sources
 - never fabricate a source URL
 - never claim that an unverified rumor is confirmed
 - clearly distinguish confirmed information from reports/rumors when applicable
@@ -310,7 +311,8 @@ def validate_article(a, existing_titles=None):
     for u in a["source_urls"]:
         if not isinstance(u, str) or not u.startswith("http"):
             return False
-    if len({source_domain(u) for u in a["source_urls"]}) < 2:
+    source_domains = {source_domain(u) for u in a["source_urls"]}
+    if len(source_domains) < 2 or any("google.com" in d for d in source_domains):
         return False
     if existing_titles and max((title_similarity(a["title"], old) for old in existing_titles), default=0) >= 0.78:
         return False
