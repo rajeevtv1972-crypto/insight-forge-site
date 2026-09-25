@@ -175,6 +175,123 @@ section{margin-bottom:46px;scroll-margin-top:88px}
 }
 .hero-actions a.secondary{background:rgba(255,255,255,.72);color:#26334b;border:1px solid rgba(255,255,255,.92);box-shadow:none}
 
+
+/* Permanent TypeBloom house promotion */
+.typebloom-promo{
+  position:relative;
+  overflow:hidden;
+  margin:8px 0 46px;
+  padding:0;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 88% 20%,rgba(216,255,232,.23),transparent 24%),
+    linear-gradient(135deg,#0d2e22 0%,#245d43 55%,#0e5361 100%);
+  border:1px solid rgba(216,255,232,.30);
+  box-shadow:0 22px 65px rgba(12,46,33,.24);
+  color:#fff;
+}
+.typebloom-promo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.05) 62.5% 63%,transparent 63.5% 100%);
+  pointer-events:none;
+}
+.typebloom-promo-inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);
+  align-items:center;
+  gap:24px;
+  padding:28px 30px;
+}
+.typebloom-promo-label{
+  display:inline-flex;
+  width:max-content;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(216,255,232,.13);
+  border:1px solid rgba(216,255,232,.22);
+  color:#d8ffe8;
+  font-size:.68rem;
+  font-weight:950;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+.typebloom-promo h2{
+  margin:11px 0 7px;
+  color:#fff;
+  font-size:clamp(1.55rem,3vw,2.45rem);
+  line-height:1.04;
+  letter-spacing:-.04em;
+}
+.typebloom-promo p{
+  margin:0;
+  max-width:720px;
+  color:rgba(236,253,245,.86);
+  font-size:.94rem;
+}
+.typebloom-promo-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:15px;
+}
+.typebloom-promo-points span{
+  padding:7px 9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:#e8fff1;
+  font-size:.72rem;
+  font-weight:850;
+}
+.typebloom-promo-actions{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.typebloom-promo-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 17px;
+  border-radius:15px;
+  background:#d8ffe8;
+  color:#113b2a;
+  border:1px solid #d8ffe8;
+  font-size:.88rem;
+  font-weight:950;
+  box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+.typebloom-promo-actions a.secondary{
+  background:rgba(255,255,255,.08);
+  color:#effff5;
+  border-color:rgba(255,255,255,.20);
+  box-shadow:none;
+}
+.typebloom-promo-foot{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 30px 13px;
+  border-top:1px solid rgba(216,255,232,.14);
+  color:rgba(220,249,233,.66);
+  font-size:.67rem;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+@media(max-width:760px){
+  .typebloom-promo{border-radius:23px;margin-bottom:38px}
+  .typebloom-promo-inner{grid-template-columns:1fr;padding:22px 20px}
+  .typebloom-promo-actions{justify-content:flex-start}
+  .typebloom-promo-foot{padding:10px 20px 12px;align-items:flex-start;flex-direction:column}
+}
+
 /* Cards */
 .card-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
 .story-card{
@@ -339,6 +456,32 @@ footer a{color:#d7e4ff;margin:0 8px}
     <div id="hero-slot" class="hero-card">
       <div class="hero-media"><div class="loading">Loading the featured story…</div></div>
       <div class="hero-copy"><div class="loading">Preparing the latest story…</div></div>
+    </div>
+  </section>
+
+  <!-- Permanent house promotion: intentionally outside the dynamic article feed. -->
+  <section class="typebloom-promo" id="typebloom-featured" aria-labelledby="typebloom-promo-title" data-pinned="forever">
+    <div class="typebloom-promo-inner">
+      <div>
+        <span class="typebloom-promo-label">✦ Featured Project · House Promotion</span>
+        <h2 id="typebloom-promo-title">⌨️ TypeBloom — a calmer way to get faster.</h2>
+        <p>Practice typing for free in your browser with live WPM and accuracy, progressive levels, timed tests, daily challenges and local progress tracking.</p>
+        <div class="typebloom-promo-points" aria-label="TypeBloom features">
+          <span>⚡ WPM tracking</span>
+          <span>◎ Accuracy</span>
+          <span>🌱 Progressive levels</span>
+          <span>🌸 Daily challenge</span>
+          <span>🔥 Personal progress</span>
+        </div>
+      </div>
+      <div class="typebloom-promo-actions">
+        <a href="https://typebloom-deg.pages.dev/" rel="sponsored noopener">Visit TypeBloom →</a>
+        <a class="secondary" href="https://typebloom-deg.pages.dev/typing" rel="sponsored noopener">Start Typing</a>
+      </div>
+    </div>
+    <div class="typebloom-promo-foot">
+      <span>Promotional feature · TypeBloom is an Insight Forge project</span>
+      <a href="typebloom-free-typing-practice.html" style="color:#d8ffe8;font-weight:900">Read the full feature →</a>
     </div>
   </section>
 
