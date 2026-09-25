@@ -10,16 +10,99 @@ function escapeAttr(value) {
     .replace(/>/g, '&gt;');
 }
 
-function extractMetaDescription(html) {
-  const match = html.match(/<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i)
-    || html.match(/<meta\s+[^>]*content=["']([^"']*)["'][^>]*name=["']description["'][^>]*>/i);
-  return match ? match[1].trim() : '';
+function escapeText(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
-function extractMetaKeywords(html) {
-  const match = html.match(/<meta\s+[^>]*name=["']keywords["'][^>]*content=["']([^"']*)["'][^>]*>/i)
-    || html.match(/<meta\s+[^>]*content=["']([^"']*)["'][^>]*name=["']keywords["'][^>]*>/i);
-  return match ? match[1].trim() : '';
+function extractMeta(html, name) {
+  const a = new RegExp('<meta\\s+[^>]*name=["\\']' + name + '["\\'][^>]*content=["\\']([^"\\']*)["\\'][^>]*>', 'i');
+  const b = new RegExp('<meta\\s+[^>]*content=["\\']([^"\\']*)["\\'][^>]*name=["\\']' + name + '["\\'][^>]*>', 'i');
+  return (html.match(a) || html.match(b) || [,''])[1].trim();
+}
+
+function normalize(value) {
+  return String(value || '')
+    .toLocaleLowerCase()
+    .normalize('NFD')
+    .replace(/[\\u0300-\\u036f]/g, '')
+    .replace(/[^\\p{L}\\p{N}]+/gu, ' ')
+    .trim();
+}
+
+function relatedStories(current, feed, keywords) {
+  const currentTerms = new Set(
+    normalize((keywords || '') + ' ' + (current?.title || '') + ' ' + (current?.category || ''))
+      .split(/\\s+/)
+      .filter(token => token.length > 2)
+  );
+
+  return feed
+    .filter(item => item && item.url && item.url !== current.url)
+    .map(item => {
+      const itemTerms = new Set(
+        normalize((item.title || '') + ' ' + (item.category || '') + ' ' + (item.keywords || '') + ' ' + (item.description || '') + ' ' + (item.alt || ''))
+          .split(/\\s+/)
+          .filter(token => token.length > 2)
+      );
+
+      let score = 0;
+      if (item.category === current.category) score += 12;
+
+      for (const term of currentTerms) {
+        if (itemTerms.has(term)) score += 2;
+      }
+
+      const currentTitle = normalize(current.title);
+      const itemTitle = normalize(item.title);
+      const currentTitleTokens = currentTitle.split(/\\s+/).filter(t => t.length > 3);
+      for (const token of currentTitleTokens) {
+        if (itemTitle.includes(token)) score += 3;
+      }
+
+      return { item, score };
+    })
+    .filter(entry => entry.score > 0)
+    .sort((a, b) => b.score - a.score || String(b.item.date).localeCompare(String(a.item.date)))
+    .slice(0, 4)
+    .map(entry => entry.item);
+}
+
+function relatedMarkup(items, url) {
+  if (!items.length) return '';
+
+  const cards = items.map(item => {
+    const image = item.image
+      ? new URL(item.image.replace(/^\\//, ''), url.origin + '/').href
+      : new URL('/social-share.jpg', url.origin).href;
+
+    return `
+      <article class="if-related-card">
+        <a href="/${escapeAttr(item.url)}">
+          <img src="${escapeAttr(image)}" alt="${escapeAttr(item.alt || item.title)}" loading="lazy" decoding="async">
+          <div class="if-related-body">
+            <span class="if-related-cat">${escapeText(item.category || 'Insight Forge')}</span>
+            <h3>${escapeText(item.title || 'Related story')}</h3>
+            <span class="if-related-link">Read story →</span>
+          </div>
+        </a>
+      </article>`;
+  }).join('');
+
+  return `
+    <section class="if-related" aria-labelledby="if-related-title">
+      <div class="if-related-head">
+        <div>
+          <span class="if-related-eyebrow">✦ Continue Reading</span>
+          <h2 id="if-related-title">You might also like</h2>
+          <p>More stories connected to this article.</p>
+        </div>
+        <a class="if-related-all" href="/latest-news.html">See all stories →</a>
+      </div>
+      <div class="if-related-grid">${cards}</div>
+    </section>`;
 }
 
 export default {
@@ -34,31 +117,33 @@ export default {
     const url = new URL(request.url);
     const pathname = url.pathname;
     const isLikelyArticle = pathname.endsWith('.html') &&
-      !/\/(index|search|anime|movies|tech|gaming|space-science|latest-news|about|contact|privacy-policy|faq)\.html$/i.test(pathname);
+      !/(^|\\/)(index|search|anime|movies|tech|gaming|space-science|latest-news|about|contact|privacy-policy|faq)\\.html$/i.test(pathname);
 
     let articleMeta = null;
+    let relatedHtml = '';
 
     if (isLikelyArticle) {
       try {
         const feedResponse = await env.ASSETS.fetch(new Request(new URL('/latest-news.json', request.url)));
         if (feedResponse.ok) {
           const feed = await feedResponse.json();
-          const normalizedPath = pathname.replace(/^\//, '');
+          const normalizedPath = pathname.replace(/^\\//, '');
           const item = Array.isArray(feed) ? feed.find(entry => entry && entry.url === normalizedPath) : null;
 
           if (item) {
-            const articleResponse = response.clone();
-            const articleHtml = await articleResponse.text();
-            const description = extractMetaDescription(articleHtml) ||
+            const articleHtml = await response.clone().text();
+            const description = extractMeta(articleHtml, 'description') ||
               item.description ||
               item.alt ||
               `Read the latest ${item.category || 'Insight Forge'} story: ${item.title || ''}`;
 
+            const keywords = extractMeta(articleHtml, 'keywords') || item.keywords || '';
+
             const image = item.image
-              ? new URL(item.image.replace(/^\//, ''), url.origin + '/').href
+              ? new URL(item.image.replace(/^\\//, ''), url.origin + '/').href
               : new URL('/social-share.jpg', url.origin).href;
 
-            const canonicalUrl = new URL(item.url.replace(/^\//, ''), url.origin + '/').href;
+            const canonicalUrl = new URL(item.url.replace(/^\\//, ''), url.origin + '/').href;
 
             articleMeta = {
               title: item.title || SITE_NAME,
@@ -66,14 +151,131 @@ export default {
               image,
               url: canonicalUrl,
               datePublished: item.date || '',
-              category: item.category || ''
+              category: item.category || '',
+              keywords
             };
+
+            const related = relatedStories(articleMeta, Array.isArray(feed) ? feed : [], keywords);
+            relatedHtml = relatedMarkup(related, url);
           }
         }
       } catch (error) {
         articleMeta = null;
+        relatedHtml = '';
       }
     }
+
+    const relatedStyles = relatedHtml ? `
+<style>
+.if-related{
+  margin:48px 0 38px;
+  padding:26px;
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,255,255,.78),rgba(255,255,255,.50));
+  border:1px solid rgba(255,255,255,.84);
+  box-shadow:0 18px 55px rgba(35,50,75,.10);
+  backdrop-filter:blur(22px) saturate(140%);
+  -webkit-backdrop-filter:blur(22px) saturate(140%);
+}
+.if-related-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+}
+.if-related-eyebrow{
+  display:inline-flex;
+  margin-bottom:7px;
+  color:#245dc9;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.if-related-head h2{
+  margin:0;
+  color:#172033;
+  font-size:1.6rem;
+  line-height:1.1;
+  letter-spacing:-.03em;
+}
+.if-related-head p{
+  margin:5px 0 0;
+  color:#667085;
+  font-size:.88rem;
+}
+.if-related-all{
+  color:#2563eb !important;
+  font-size:.84rem;
+  font-weight:900;
+  white-space:nowrap;
+}
+.if-related-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.if-related-card{
+  overflow:hidden;
+  border-radius:21px;
+  background:rgba(255,255,255,.70);
+  border:1px solid rgba(255,255,255,.82);
+  box-shadow:0 11px 32px rgba(15,23,42,.07);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.if-related-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 19px 42px rgba(15,23,42,.12);
+  border-color:rgba(37,99,235,.24);
+}
+.if-related-card img{
+  width:100%;
+  aspect-ratio:16/9;
+  display:block;
+  object-fit:cover;
+  background:#dbeafe;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+.if-related-body{padding:14px 15px 16px}
+.if-related-cat{
+  display:inline-flex;
+  margin-bottom:8px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:rgba(37,99,235,.09);
+  color:#1d4ed8;
+  font-size:.67rem;
+  font-weight:900;
+}
+.if-related-card h3{
+  margin:0;
+  color:#1b2942;
+  font-size:.98rem;
+  line-height:1.3;
+  letter-spacing:-.015em;
+}
+.if-related-link{
+  display:inline-flex;
+  margin-top:10px;
+  color:#2563eb;
+  font-size:.78rem;
+  font-weight:900;
+}
+@media(max-width:950px){
+  .if-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .if-related{padding:19px;border-radius:23px;margin-top:38px}
+  .if-related-head{align-items:flex-start;flex-direction:column}
+  .if-related-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .if-related-card{transition:none}
+  .if-related-card:hover{transform:none}
+}
+</style>` : '';
 
     const themed = new HTMLRewriter()
       .on('head', {
@@ -93,7 +295,7 @@ ${articleMeta.datePublished ? `<meta property="article:published_time" content="
 <meta name="twitter:title" content="${escapeAttr(articleMeta.title)}">
 <meta name="twitter:description" content="${escapeAttr(articleMeta.description)}">
 <meta name="twitter:image" content="${escapeAttr(articleMeta.image)}">
-<meta name="twitter:url" content="${escapeAttr(articleMeta.url)}">`,
+<meta name="twitter:url" content="${escapeAttr(articleMeta.url)}">${relatedStyles}`,
               { html: true }
             );
           }
@@ -102,6 +304,13 @@ ${articleMeta.datePublished ? `<meta property="article:published_time" content="
       .on('html', {
         element(element) {
           element.setAttribute('data-insight-forge-theme', 'liquid-glass');
+        }
+      })
+      .on('div#disqus_thread', {
+        element(element) {
+          if (relatedHtml) {
+            element.before(relatedHtml, { html: true });
+          }
         }
       })
       .on('body', {
