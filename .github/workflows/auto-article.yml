@@ -5,19 +5,6 @@ on:
     - cron: '37 10 * * *'
       timezone: 'Asia/Kolkata'
   workflow_dispatch:
-    inputs:
-      category:
-        description: 'Category for a manual run (use auto for all five)'
-        required: false
-        type: choice
-        options:
-          - auto
-          - Technology
-          - Movies
-          - Anime
-          - Space
-          - Gaming
-        default: auto
 
 permissions:
   contents: write
