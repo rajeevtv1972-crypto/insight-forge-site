@@ -2,12 +2,12 @@ name: Auto Publish News Article
 
 on:
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '37 10 * * *'
       timezone: 'Asia/Kolkata'
   workflow_dispatch:
     inputs:
       category:
-        description: 'Category for a manual run (use auto for rotation)'
+        description: 'Category for a manual run (use auto for all five)'
         required: false
         type: choice
         options:
@@ -29,11 +29,12 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GEMINI_MODEL: gemini-3.8-flash
       ARTICLE_CATEGORY: ${{ inputs.category || 'auto' }}
+      PYTHONUNBUFFERED: '1'
 
     steps:
       - name: Checkout main
@@ -44,15 +45,42 @@ jobs:
           git config user.name "Insight Forge Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Generate and publish article
-        run: python3 scripts/auto_article.py
+      - name: Validate automation scripts
+        run: |
+          python3 -m py_compile scripts/auto_publish.py
+          python3 -m py_compile scripts/auto_enhance.py
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          for path in ["page-sitemap.xml", "image-sitemap.xml"]:
+              ET.parse(path)
+              print("XML OK:", path)
+          PY
 
-      - name: Commit generated article
+      - name: Research and generate articles
+        run: python3 scripts/auto_publish.py
+
+      - name: QA, thumbnails, social copy and SEO assets
+        run: python3 scripts/auto_enhance.py
+
+      - name: Final validation
+        run: |
+          git diff --check
+          python3 - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          latest = json.load(open("latest-news.json", encoding="utf-8"))
+          assert isinstance(latest, list) and latest, "latest-news.json is empty"
+          ET.parse("page-sitemap.xml")
+          ET.parse("image-sitemap.xml")
+          print("Final QA passed; feed entries:", len(latest))
+          PY
+
+      - name: Commit all generated content
         run: |
           if git diff --quiet; then
             echo "No files changed; nothing to commit."
             exit 0
           fi
           git add .
-          git commit -m "Auto-publish fresh news article"
+          git commit -m "Auto-publish researched Insight Forge content"
           git push origin main
