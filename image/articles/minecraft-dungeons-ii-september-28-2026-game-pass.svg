@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#123b2a"/><stop offset="100%" stop-color="#0f766e"/></linearGradient></defs>
+<rect width="1200" height="675" fill="url(#g)"/>
+<circle cx="1010" cy="120" r="165" fill="#d8ffe8" opacity=".18"/><circle cx="1085" cy="545" r="220" fill="#fff" opacity=".08"/>
+<path d="M0 550 C250 430 420 640 650 530 S1040 370 1220 465" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="4"/>
+<rect x="60" y="52" width="430" height="104" rx="20" fill="#07111e" opacity=".55"/>
+<text x="84" y="92" fill="#d8ffe8" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="900" letter-spacing="3">MINECRAFT</text>
+<text x="84" y="135" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="33" font-weight="900">DUNGEONS II</text>
+<text x="70" y="300" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="51" font-weight="900">Minecraft Dungeons II Arrives September 28</text>
+<rect x="70" y="325" width="210" height="7" rx="4" fill="#d8ffe8" opacity=".85"/>
+<text x="70" y="610" fill="#fff" fill-opacity=".75" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800">INSIGHT FORGE · SEPTEMBER 26, 2026 · MINECRAFT</text>
+</svg>
