@@ -1,4 +1,4 @@
-const THEME_HREF = '/css/liquid-glass.css?v=1';
+const THEME_HREF = '/css/liquid-glass.css?v=2';
 const FAVICON_HREF = '/favicon.svg?v=1';
 const SITE_NAME = 'Insight Forge';
 
