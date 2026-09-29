@@ -98,15 +98,15 @@ function normalize(value) {
   return String(value || '')
     .toLocaleLowerCase()
     .normalize('NFD')
-    .replace(/[\\u0300-\\u036f]/g, '')
-    .replace(/[^\\p{L}\\p{N}]+/gu, ' ')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim();
 }
 
 function relatedStories(current, feed, keywords) {
   const currentTerms = new Set(
     normalize((keywords || '') + ' ' + (current?.title || '') + ' ' + (current?.category || ''))
-      .split(/\\s+/)
+      .split(/\s+/)
       .filter(token => token.length > 2)
   );
 
@@ -115,7 +115,7 @@ function relatedStories(current, feed, keywords) {
     .map(item => {
       const itemTerms = new Set(
         normalize((item.title || '') + ' ' + (item.category || '') + ' ' + (item.keywords || '') + ' ' + (item.description || '') + ' ' + (item.alt || ''))
-          .split(/\\s+/)
+          .split(/\s+/)
           .filter(token => token.length > 2)
       );
 
@@ -128,7 +128,7 @@ function relatedStories(current, feed, keywords) {
 
       const currentTitle = normalize(current.title);
       const itemTitle = normalize(item.title);
-      const currentTitleTokens = currentTitle.split(/\\s+/).filter(t => t.length > 3);
+      const currentTitleTokens = currentTitle.split(/\s+/).filter(t => t.length > 3);
       for (const token of currentTitleTokens) {
         if (itemTitle.includes(token)) score += 3;
       }
@@ -218,7 +218,7 @@ export default {
     const url = new URL(request.url);
     const pathname = url.pathname;
     const isLikelyArticle = pathname.endsWith('.html') &&
-      !/(^|\\/)(index|search|anime|movies|tech|gaming|space-science|latest-news|about|contact|privacy-policy|faq)\\.html$/i.test(pathname);
+      !/(^|\/)(index|search|anime|movies|tech|gaming|space-science|latest-news|about|contact|privacy-policy|faq)\.html$/i.test(pathname);
 
     let articleMeta = null;
     let relatedHtml = '';
