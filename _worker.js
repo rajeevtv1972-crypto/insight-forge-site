@@ -215,7 +215,6 @@ export default {
       return response;
     }
 
-    const url = new URL(request.url);
     const pathname = url.pathname;
     const isLikelyArticle = pathname.endsWith('.html') &&
       !/(^|\/)(index|search|anime|movies|tech|gaming|space-science|latest-news|about|contact|privacy-policy|faq)\.html$/i.test(pathname);
