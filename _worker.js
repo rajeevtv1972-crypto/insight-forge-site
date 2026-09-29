@@ -146,7 +146,7 @@ function relatedMarkup(items, url) {
 
   const cards = items.map(item => {
     const image = item.image
-      ? new URL(item.image.replace(/^\\//, ''), url.origin + '/').href
+      ? new URL(item.image.replace(/^\//, ''), url.origin + '/').href
       : new URL('/social-share.jpg', url.origin).href;
 
     return `
@@ -229,7 +229,7 @@ export default {
         const feedResponse = await env.ASSETS.fetch(new Request(new URL('/latest-news.json', request.url)));
         if (feedResponse.ok) {
           const feed = await feedResponse.json();
-          const normalizedPath = pathname.replace(/^\\//, '');
+          const normalizedPath = pathname.replace(/^\//, '');
           const item = Array.isArray(feed) ? feed.find(entry => entry && entry.url === normalizedPath) : null;
 
           if (item) {
@@ -242,10 +242,10 @@ export default {
             const keywords = extractMeta(articleHtml, 'keywords') || item.keywords || '';
 
             const image = item.image
-              ? new URL(item.image.replace(/^\\//, ''), url.origin + '/').href
+              ? new URL(item.image.replace(/^\//, ''), url.origin + '/').href
               : new URL('/social-share.jpg', url.origin).href;
 
-            const canonicalUrl = new URL(item.url.replace(/^\\//, ''), url.origin + '/').href;
+            const canonicalUrl = new URL(item.url.replace(/^\//, ''), url.origin + '/').href;
 
             articleMeta = {
               title: item.title || SITE_NAME,
