@@ -89,8 +89,8 @@ function escapeText(value) {
 }
 
 function extractMeta(html, name) {
-  const a = new RegExp('<meta\\s+[^>]*name=["\\']' + name + '["\\'][^>]*content=["\\']([^"\\']*)["\\'][^>]*>', 'i');
-  const b = new RegExp('<meta\\s+[^>]*content=["\\']([^"\\']*)["\\'][^>]*name=["\\']' + name + '["\\'][^>]*>', 'i');
+  const a = new RegExp("<meta\\s+[^>]*name=[\"']" + name + "[\"'][^>]*content=[\"']([^\"']*)[\"'][^>]*>", "i");
+  const b = new RegExp("<meta\\s+[^>]*content=[\"']([^\"']*)[\"'][^>]*name=[\"']" + name + "[\"'][^>]*>", "i");
   return (html.match(a) || html.match(b) || [,''])[1].trim();
 }
 
