@@ -14,6 +14,8 @@ on:
     paths:
       - "scripts/**"
       - "_worker.js"
+      - "latest-news.json"
+      - "image/**"
       - ".github/workflows/**"
       - "page-sitemap.xml"
       - "image-sitemap.xml"
