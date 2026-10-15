@@ -34,6 +34,14 @@ def write(path, content):
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(content, encoding="utf-8")
 
+def clean_page_url(value):
+    url = str(value or "").strip()
+    url = re.sub(r"\.html(?=([?#]|$))", "", url, flags=re.I)
+    index_url = BASE.rstrip("/") + "/index"
+    if url.rstrip("/").lower() == index_url.lower():
+        return BASE
+    return url
+
 def normalize(value):
     return re.sub(r"[^a-z0-9 ]+", " ", str(value or "").lower()).strip()
 
@@ -191,7 +199,7 @@ def write_social(today, articles):
     for article in articles:
         keywords = article["keywords"]
         hashtags = " ".join("#" + re.sub(r"[^A-Za-z0-9]", "", word) for word in keywords[:6])
-        url = BASE + article["slug"] + ".html"
+        url = BASE + article["slug"]
 
         x = (article["title"] + " — " + article["description"] + " " + url).strip()
         if len(x) > 260:
@@ -224,12 +232,12 @@ def write_social(today, articles):
 def rebuild_page_sitemap(new_articles):
     path = "page-sitemap.xml"
     source = read(path)
-    urls = re.findall(r"<loc>\s*(https://[^<]+?)\s*</loc>", source)
-    urls.extend(BASE + a["slug"] + ".html" for a in new_articles)
+    urls = [clean_page_url(url) for url in re.findall(r"<loc>\s*(https://[^<]+?)\s*</loc>", source)]
+    urls.extend(clean_page_url(BASE + a["slug"]) for a in new_articles)
 
     out, seen = [], set()
     for url in urls:
-        if url not in seen:
+        if url and url not in seen:
             seen.add(url)
             out.append(url)
 
@@ -256,10 +264,10 @@ def rebuild_image_sitemap(new_articles):
 
     mapping = {}
     for page_url, image_url in pairs:
-        mapping.setdefault(page_url.strip(), image_url.strip())
+        mapping.setdefault(clean_page_url(page_url), image_url.strip())
 
     for article in new_articles:
-        mapping[BASE + article["slug"] + ".html"] = BASE + article["image"]
+        mapping[clean_page_url(BASE + article["slug"])] = BASE + article["image"]
 
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
