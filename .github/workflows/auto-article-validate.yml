@@ -5,6 +5,8 @@ on:
     paths:
       - "scripts/**"
       - "_worker.js"
+      - "latest-news.json"
+      - "image/**"
       - ".github/workflows/**"
       - "page-sitemap.xml"
       - "image-sitemap.xml"
@@ -33,13 +35,54 @@ jobs:
           python3 -m py_compile scripts/auto_publish.py
           python3 -m py_compile scripts/auto_enhance.py
 
-      - name: XML sitemap validation
+      - name: Sitemap integrity validation
         run: |
           python3 - <<'PY'
+          import json
+          import re
           import xml.etree.ElementTree as ET
-          for path in ["page-sitemap.xml", "image-sitemap.xml"]:
-              ET.parse(path)
-              print("XML OK:", path)
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          BASE = "https://insight-forge-site.pages.dev/"
+          NS = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9",
+                "image": "http://www.google.com/schemas/sitemap-image/1.1"}
+
+          page_root = ET.parse("page-sitemap.xml").getroot()
+          image_root = ET.parse("image-sitemap.xml").getroot()
+          page_urls = [e.text.strip() for e in page_root.findall(".//s:url/s:loc", NS) if e.text]
+          image_pages = [e.text.strip() for e in image_root.findall(".//s:url/s:loc", NS) if e.text]
+          image_urls = [e.text.strip() for e in image_root.findall(".//image:image/image:loc", NS) if e.text]
+
+          assert len(page_urls) == len(set(page_urls)), "Duplicate page sitemap URLs"
+          assert len(image_pages) == len(set(image_pages)), "Duplicate image sitemap page URLs"
+          assert all(not urlparse(u).path.lower().endswith(".html") for u in page_urls), "Page sitemap contains .html URLs"
+          assert all(not urlparse(u).path.lower().endswith(".html") for u in image_pages), "Image sitemap contains .html page URLs"
+
+          feed = json.loads(Path("latest-news.json").read_text(encoding="utf-8"))
+          expected = {
+              BASE + re.sub(r"\.html$", "", str(item.get("url", "")).lstrip("/"), flags=re.I)
+              for item in feed if item.get("url")
+          }
+          missing = sorted(expected - set(page_urls))
+          assert not missing, "Feed articles missing from page sitemap: " + ", ".join(missing[:10])
+
+          for url in page_urls:
+              path = urlparse(url).path.strip("/")
+              source = Path(path + ".html") if path else Path("index.html")
+              assert source.is_file(), f"Sitemap page has no source file: {url} -> {source}"
+
+          for url in image_pages:
+              path = urlparse(url).path.strip("/")
+              source = Path(path + ".html") if path else Path("index.html")
+              assert source.is_file(), f"Image sitemap page has no source file: {url} -> {source}"
+
+          for url in image_urls:
+              asset = Path(urlparse(url).path.lstrip("/"))
+              assert asset.is_file(), f"Image sitemap asset is missing: {url} -> {asset}"
+
+          print(f"Page sitemap OK: {len(page_urls)} clean URLs; all {len(expected)} feed articles included.")
+          print(f"Image sitemap OK: {len(image_pages)} pages, {len(image_urls)} existing image assets.")
           PY
 
       - name: YAML sanity
