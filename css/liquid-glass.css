@@ -606,3 +606,9 @@ footer a{color:#d8e5ff !important}
     transform:none !important;
   }
 }
+
+/* Keyboard accessibility: visible focus for links and controls on every page. */
+:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 3px !important;
+}
