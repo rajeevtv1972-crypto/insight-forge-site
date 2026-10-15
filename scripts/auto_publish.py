@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://insight-forge-site.pages.dev/"
-GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-3.6-flash"]
+GEMINI_MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"]
 
 GENRES = [
     {
@@ -168,7 +168,6 @@ def call_gemini(prompt):
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature": 0.55,
             "maxOutputTokens": 24000,
             "responseMimeType": "application/json",
         },
@@ -183,7 +182,7 @@ def call_gemini(prompt):
             data=json.dumps(body).encode("utf-8"),
             headers={
                 "Content-Type": "application/json",
-                "x-goog-api-key": os.environ["GEMINI_API_KEY"],
+                "x-goog-api-key": os.environ.get("GEMINI_API_KEY", "").strip(),
             },
             method="POST",
         )
@@ -409,7 +408,7 @@ def update_sitemap(articles):
         write_file(path, content)
 
 def main():
-    key = os.environ.get("GEMINI_API_KEY")
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not key:
         print("GEMINI_API_KEY secret is required.", file=sys.stderr)
         sys.exit(2)
