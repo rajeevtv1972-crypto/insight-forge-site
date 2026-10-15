@@ -216,8 +216,13 @@ export default {
     }
 
     const pathname = url.pathname;
-    const isLikelyArticle = pathname.endsWith('.html') &&
-      !/(^|\/)(index|search|anime|movies|tech|gaming|space-science|latest-news|about|contact|privacy-policy|faq)\.html$/i.test(pathname);
+    const rawCanonicalPath = pathname.replace(/\/+$/, '').replace(/\.html$/i, '');
+    const pageCanonicalPath = !rawCanonicalPath || /^\/index$/i.test(rawCanonicalPath) ? '/' : rawCanonicalPath;
+    const pageCanonicalUrl = url.origin + pageCanonicalPath;
+    const routePath = pathname.replace(/^\/+|\/+$/g, '').replace(/\.html$/i, '').toLowerCase();
+    const nonArticleRoutes = new Set(['', 'index', 'search', 'anime', 'movies', 'tech', 'gaming', 'space-science', 'latest-news', 'about', 'contact', 'privacy-policy', 'faq', 'sports']);
+    const isLikelyArticle = Boolean(routePath) && !nonArticleRoutes.has(routePath) &&
+      !routePath.includes('/') && /^[a-z0-9][a-z0-9-]*$/.test(routePath);
 
     let articleMeta = null;
     let relatedHtml = '';
@@ -228,8 +233,10 @@ export default {
         const feedResponse = await env.ASSETS.fetch(new Request(new URL('/latest-news.json', request.url)));
         if (feedResponse.ok) {
           const feed = await feedResponse.json();
-          const normalizedPath = pathname.replace(/^\//, '');
-          const item = Array.isArray(feed) ? feed.find(entry => entry && entry.url === normalizedPath) : null;
+          const normalizedPath = pathname.replace(/^\/+|\/+$/g, '').replace(/\.html$/i, '');
+          const item = Array.isArray(feed) ? feed.find(entry =>
+            entry && String(entry.url || '').replace(/^\/+|\/+$/g, '').replace(/\.html$/i, '') === normalizedPath
+          ) : null;
 
           if (item) {
             articleHtml = await response.clone().text();
@@ -244,7 +251,7 @@ export default {
               ? new URL(item.image.replace(/^\//, ''), url.origin + '/').href
               : new URL('/social-share.jpg', url.origin).href;
 
-            const canonicalUrl = new URL(item.url.replace(/^\//, ''), url.origin + '/').href;
+            const canonicalUrl = new URL(String(item.url).replace(/^\/+/, '').replace(/\.html$/i, ''), url.origin + '/').href;
 
             articleMeta = {
               title: item.title || SITE_NAME,
@@ -260,7 +267,7 @@ export default {
             relatedHtml = relatedMarkup(related, url);
 
             if (!looksLikeBot(request)) {
-              await incrementStat(env, pathname, 'views');
+              await incrementStat(env, '/' + String(item.url).replace(/^\/+/, ''), 'views');
             }
           }
         }
@@ -434,14 +441,13 @@ export default {
     const themed = new HTMLRewriter()
       .on('head', {
         element(element) {
-          element.append(`<link rel="stylesheet" href="${THEME_HREF}"><link rel="icon" href="${FAVICON_HREF}" type="image/svg+xml" sizes="any">`, { html: true });
+          element.append(`<link rel="canonical" href="${escapeAttr(articleMeta ? articleMeta.url : pageCanonicalUrl)}"><link rel="stylesheet" href="${THEME_HREF}"><link rel="icon" href="${FAVICON_HREF}" type="image/svg+xml" sizes="any"><meta property="og:url" content="${escapeAttr(articleMeta ? articleMeta.url : pageCanonicalUrl)}">`, { html: true });
 
           if (articleMeta) {
             element.append(
               `<meta property="og:title" content="${escapeAttr(articleMeta.title)}">
 <meta property="og:description" content="${escapeAttr(articleMeta.description)}">
 <meta property="og:image" content="${escapeAttr(articleMeta.image)}">
-<meta property="og:url" content="${escapeAttr(articleMeta.url)}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="${SITE_NAME}">
 ${articleMeta.datePublished ? `<meta property="article:published_time" content="${escapeAttr(articleMeta.datePublished)}">` : ''}
@@ -453,6 +459,21 @@ ${articleMeta.datePublished ? `<meta property="article:published_time" content="
               { html: true }
             );
           }
+        }
+      })
+      .on('link[rel="canonical"]', {
+        element(element) {
+          element.remove();
+        }
+      })
+      .on('meta[property="og:url"]', {
+        element(element) {
+          element.remove();
+        }
+      })
+      .on('meta[property="og:title"],meta[property="og:description"],meta[property="og:image"],meta[property="og:type"],meta[property="og:site_name"],meta[property="article:published_time"],meta[name="twitter:card"],meta[name="twitter:title"],meta[name="twitter:description"],meta[name="twitter:image"],meta[name="twitter:url"]', {
+        element(element) {
+          if (articleMeta) element.remove();
         }
       })
       .on('html', {
