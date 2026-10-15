@@ -318,7 +318,7 @@ def validate_article(a, existing_titles=None):
     return True
 
 def article_html(a, genre, today):
-    canonical = BASE + a["slug"] + ".html"
+    canonical = BASE + a["slug"]
     sources = "".join(
         f'<li><a href="{html.escape(u, quote=True)}" target="_blank" rel="noopener">Source {i}</a></li>'
         for i, u in enumerate(a["source_urls"], 1)
@@ -333,7 +333,7 @@ def article_html(a, genre, today):
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
         "publisher": {"@type": "Organization", "name": "Insight Forge"},
     }
-    nav = '<a href="index.html">Home</a> <a href="anime.html">Anime</a> <a href="movies.html">Movies</a> <a href="tech.html">Tech</a> <a href="space-science.html">Space</a> <a href="gaming.html">Gaming</a>'
+    nav = '<a href="/">Home</a> <a href="/anime">Anime</a> <a href="/movies">Movies</a> <a href="/tech">Tech</a> <a href="/space-science">Space</a> <a href="/gaming">Gaming</a>'
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -372,7 +372,7 @@ main{{max-width:900px;margin:30px auto;padding:0 20px}}article{{background:#fff;
 
 def update_category_page(path, a, today):
     content = read_file(path)
-    card = f'<article class="card"><span class="tag">{html.escape(next(x for x in GENRES if x["name"] == a["genre"])["tag"])} · {dt.datetime.strptime(today, "%Y-%m-%d").strftime("%b %d")}</span><a href="{a["slug"]}.html">{html.escape(a["title"])}</a></article>'
+    card = f'<article class="card"><span class="tag">{html.escape(next(x for x in GENRES if x["name"] == a["genre"])["tag"])} · {dt.datetime.strptime(today, "%Y-%m-%d").strftime("%b %d")}</span><a href="{a["slug"]}">{html.escape(a["title"])}</a></article>'
     marker = '<div class="article-grid">'
     if marker not in content:
         print(f"WARNING: could not update {path}: article-grid marker missing")
