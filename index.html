@@ -412,9 +412,11 @@ footer a{color:#d7e4ff;margin:0 8px}
   .story-card{transition:none}
   .story-card:hover{transform:none}
 }
+.skip-link{position:absolute;z-index:2000;top:-100px;left:12px;padding:12px 16px;border-radius:12px;background:#fff;color:#172033;border:2px solid #2563eb;font-weight:900;box-shadow:0 8px 24px rgba(15,23,42,.18)}.skip-link:focus{top:12px;left:12px}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="site-banner">INSIGHT FORGE · FRESH STORIES · DEEP DIVES · EXPLAINERS</div>
 
 <header>
@@ -447,16 +449,13 @@ footer a{color:#d7e4ff;margin:0 8px}
   </div>
 </nav>
 
-<main>
+<main id="main-content">
   <section id="top-story">
     <div class="section-head">
       <div><h2>🔥 Top Story</h2><p>The newest featured story from the Insight Forge feed.</p></div>
       <a class="view-all" href="latest-news.html">See all stories →</a>
     </div>
-    <div id="hero-slot" class="hero-card">
-      <div class="hero-media"><div class="loading">Loading the featured story…</div></div>
-      <div class="hero-copy"><div class="loading">Preparing the latest story…</div></div>
-    </div>
+    <div id="hero-slot" class="hero-card"><div class="hero-media"><img src="image/latest-anime.svg" alt="Fall 2026 Anime Season Guide: What to Watch This October" fetchpriority="high" decoding="async"></div><div class="hero-copy"><span class="hero-kicker">🔥 Anime · Featured</span><h2>Fall 2026 Anime Season Guide: What to Watch This October</h2><p>Anime on Insight Forge — fresh reporting, context and useful details in one story.</p><div class="hero-meta">9 Oct 2026 · Published on Insight Forge</div><div class="hero-actions"><a href="fall-2026-anime-season-guide-october-lineup.html">Read Story →</a><a class="secondary" href="anime.html">More Anime</a></div></div></div>
   </section>
 
   <!-- Permanent house promotion: intentionally outside the dynamic article feed. -->
@@ -490,7 +489,11 @@ footer a{color:#d7e4ff;margin:0 8px}
       <div><h2>📰 Latest News</h2><p>Five newest articles across every section.</p></div>
       <a class="view-all" href="latest-news.html">View all →</a>
     </div>
-    <div id="latest-grid" class="card-grid"><div class="loading">Loading latest news…</div></div>
+    <div id="latest-grid" class="card-grid" aria-live="polite"><article class="story-card"><a href="dragon-ball-super-beerus-arc-october-2026-what-to-know.html"><img class="story-image" src="image/latest-anime.svg" alt="Dragon Ball Super: Beerus Arc — What Fans Should Know" loading="eager" decoding="async"><div class="story-body"><div class="story-meta"><span class="story-cat">Anime</span><time class="story-date" datetime="2026-10-09">9 Oct 2026</time></div><h3 class="story-title">Dragon Ball Super: Beerus Arc — What Fans Should Know</h3><span class="story-cta">Read story →</span></div></a></article>
+<article class="story-card"><a href="october-2026-streaming-movies-tv-guide.html"><img class="story-image" src="image/latest-movies.svg" alt="October 2026 Streaming Guide: New Movies and Shows to Track" loading="eager" decoding="async"><div class="story-body"><div class="story-meta"><span class="story-cat">Movies</span><time class="story-date" datetime="2026-10-09">9 Oct 2026</time></div><h3 class="story-title">October 2026 Streaming Guide: New Movies and Shows to Track</h3><span class="story-cta">Read story →</span></div></a></article>
+<article class="story-card"><a href="star-wars-movies-tv-shows-road-to-2027.html"><img class="story-image" src="image/latest-movies.svg" alt="Star Wars on the Road to 2027: Movies and Series to Watch" loading="lazy" decoding="async"><div class="story-body"><div class="story-meta"><span class="story-cat">Movies</span><time class="story-date" datetime="2026-10-09">9 Oct 2026</time></div><h3 class="story-title">Star Wars on the Road to 2027: Movies and Series to Watch</h3><span class="story-cta">Read story →</span></div></a></article>
+<article class="story-card"><a href="ai-agents-2026-trust-permissions-shopping.html"><img class="story-image" src="image/latest-tech.svg" alt="AI Agents in 2026: Convenience, Permissions and Trust" loading="lazy" decoding="async"><div class="story-body"><div class="story-meta"><span class="story-cat">Technology</span><time class="story-date" datetime="2026-10-09">9 Oct 2026</time></div><h3 class="story-title">AI Agents in 2026: Convenience, Permissions and Trust</h3><span class="story-cta">Read story →</span></div></a></article>
+<article class="story-card"><a href="ai-smart-glasses-privacy-everyday-use-2026.html"><img class="story-image" src="image/latest-tech.svg" alt="AI Smart Glasses in 2026: Useful Assistant or Privacy Headache?" loading="lazy" decoding="async"><div class="story-body"><div class="story-meta"><span class="story-cat">Technology</span><time class="story-date" datetime="2026-10-09">9 Oct 2026</time></div><h3 class="story-title">AI Smart Glasses in 2026: Useful Assistant or Privacy Headache?</h3><span class="story-cta">Read story →</span></div></a></article></div>
   </section>
 
   <div id="category-sections"></div>
