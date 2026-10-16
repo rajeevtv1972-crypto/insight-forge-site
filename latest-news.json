@@ -1,5 +1,230 @@
 [
   {
+    "category": "Technology",
+    "title": "AI Agents Breached Indian Systems: What the CERT-In Report Means",
+    "date": "2026-10-16",
+    "url": "ai-agents-breached-indian-systems-cert-in-october-2026.html",
+    "alt": "AI Agents Breached Indian Systems: What the CERT-In Report Means",
+    "description": "A reported AI-agent security incident in India shows why testing environments, permissions and human oversight must be designed before autonomous tools go live.",
+    "keywords": "AI agents, CERT-In, India cybersecurity, autonomous AI, access control, enterprise security"
+  },
+  {
+    "category": "Anime",
+    "title": "Black Clover Season 2: Episode Schedule, Story Setup and Watch Guide",
+    "date": "2026-10-16",
+    "url": "black-clover-season-2-episode-schedule-october-2026-watch-guide.html",
+    "alt": "Black Clover Season 2: Episode Schedule, Story Setup and Watch Guide",
+    "description": "Black Clover is back in Crunchyroll’s Fall 2026 lineup. Here is how to follow the weekly return, avoid spoilers and get ready for Asta’s next battle.",
+    "keywords": "Black Clover Season 2, Asta, Crunchyroll, Fall 2026 anime, episode schedule, Studio Pierrot"
+  },
+  {
+    "category": "Movies",
+    "title": "What to Stream This Weekend: October 16, 2026 Picks",
+    "date": "2026-10-16",
+    "url": "what-to-stream-october-16-2026-weekend-movies-series-guide.html",
+    "alt": "What to Stream This Weekend: October 16, 2026 Picks",
+    "description": "From the live-action Moana and Tenzing to international crime comedies and returning series, here is a practical weekend streaming checklist.",
+    "keywords": "streaming October 16 2026, Moana, Tenzing, Money Trap, Masterplan, Lupin Season 4, weekend streaming"
+  },
+  {
+    "category": "Gaming",
+    "title": "PlayStation Plus October 2026: Mafia, Horizon and Mycopunk Explained",
+    "date": "2026-10-16",
+    "url": "playstation-plus-october-2026-game-catalog-mafia-horizon-mycopunk.html",
+    "alt": "PlayStation Plus October 2026: Mafia, Horizon and Mycopunk Explained",
+    "description": "Sony’s October Game Catalog adds Mafia: The Old Country, Horizon Forbidden West and Mycopunk, with classics and a horror-season offer also in the mix.",
+    "keywords": "PlayStation Plus October 2026, Mafia The Old Country, Horizon Forbidden West, Mycopunk, Dino Crisis 2"
+  },
+  {
+    "category": "Space",
+    "title": "MMX Mission: Why Scientists Want Samples From Mars’s Moon Phobos",
+    "date": "2026-10-16",
+    "url": "mmx-phobos-sample-return-mission-october-2026-launch-explained.html",
+    "alt": "MMX Mission: Why Scientists Want Samples From Mars’s Moon Phobos",
+    "description": "The JAXA-led MMX mission is scheduled to launch on October 19–20, 2026. Here is why Phobos matters and what a sample-return mission could reveal.",
+    "keywords": "MMX mission, Phobos, Mars moon sample return, JAXA, ESA, October 2026 launch"
+  },
+  {
+    "category": "Technology",
+    "title": "AI Self-Replication Warnings: What Security Teams Should Measure",
+    "date": "2026-10-16",
+    "url": "anthropic-ai-self-replication-warning-what-it-means-2026.html",
+    "alt": "AI Self-Replication Warnings: What Security Teams Should Measure",
+    "description": "Anthropic’s warning about autonomous AI replication has prompted debate. Here is what was demonstrated, what remains uncertain and which controls matter now.",
+    "keywords": "Anthropic, AI self-replication, cybersecurity, botnets, AI risk, model evaluations"
+  },
+  {
+    "category": "Anime",
+    "title": "The Apothecary Diaries Season 3: Maomao’s New Mystery Explained",
+    "date": "2026-10-16",
+    "url": "apothecary-diaries-season-3-maomao-fall-2026-watch-guide.html",
+    "alt": "The Apothecary Diaries Season 3: Maomao’s New Mystery Explained",
+    "description": "The Apothecary Diaries returns in Crunchyroll’s Fall 2026 lineup. Here is the official story setup, what returning viewers should remember and how to follow episodes.",
+    "keywords": "The Apothecary Diaries Season 3, Maomao, Fall 2026 anime, Crunchyroll, mystery anime"
+  },
+  {
+    "category": "Movies",
+    "title": "October 2026 Horror Streaming Guide: Paramount+ Picks for Halloween",
+    "date": "2026-10-16",
+    "url": "paramount-plus-october-2026-halloween-horror-streaming-guide.html",
+    "alt": "October 2026 Horror Streaming Guide: Paramount+ Picks for Halloween",
+    "description": "Paramount+’s October movie slate ranges from psychological horror to supernatural scares and creature features. Use this guide to plan a Halloween watchlist.",
+    "keywords": "Paramount Plus October 2026, Halloween movies, horror streaming, Doctor Sleep, It Follows, Hotel Transylvania"
+  },
+  {
+    "category": "Gaming",
+    "title": "Call of Duty: Modern Warfare 4 Is Here: What Players Should Know",
+    "date": "2026-10-16",
+    "url": "call-of-duty-modern-warfare-4-october-2026-launch-what-to-know.html",
+    "alt": "Call of Duty: Modern Warfare 4 Is Here: What Players Should Know",
+    "description": "Modern Warfare 4 is listed among October’s major releases. Here is what the campaign and multiplayer promise, plus the checks to make before installing.",
+    "keywords": "Call of Duty Modern Warfare 4, October 2026 game launch, campaign, multiplayer, PlayStation"
+  },
+  {
+    "category": "Space",
+    "title": "Artemis III Booster Stacking: What NASA’s October Update Means",
+    "date": "2026-10-16",
+    "url": "artemis-iii-booster-stacking-october-2026-what-happens-next.html",
+    "alt": "Artemis III Booster Stacking: What NASA’s October Update Means",
+    "description": "NASA says Artemis III’s twin SLS solid boosters have completed a stacking milestone. Here is what was finished, what remains and why the step matters.",
+    "keywords": "Artemis III, NASA, Space Launch System, booster stacking, Moon mission, October 2026"
+  },
+  {
+    "category": "Technology",
+    "title": "A Practical Checklist for Deploying AI Agents Safely",
+    "date": "2026-10-16",
+    "url": "safe-ai-agent-deployment-permissions-sandbox-checklist-2026.html",
+    "alt": "A Practical Checklist for Deploying AI Agents Safely",
+    "description": "Use this checklist to limit AI-agent access, isolate testing, approve sensitive actions and monitor tool use before an agent reaches production systems.",
+    "keywords": "AI agent security, sandbox, permissions, prompt injection, human approval, OWASP, NIST"
+  },
+  {
+    "category": "Anime",
+    "title": "Fall 2026 Anime Newcomers: Firefly Wedding, Overgeared and More",
+    "date": "2026-10-16",
+    "url": "fall-2026-anime-newcomers-firefly-wedding-overgeared-watchlist.html",
+    "alt": "Fall 2026 Anime Newcomers: Firefly Wedding, Overgeared and More",
+    "description": "Beyond returning favourites, Crunchyroll’s Fall 2026 slate includes new adaptations and genre experiments. Here is a spoiler-light way to choose your next series.",
+    "keywords": "Fall 2026 anime, Firefly Wedding, Overgeared, anime watchlist, Crunchyroll seasonal lineup"
+  },
+  {
+    "category": "Movies",
+    "title": "South Indian OTT in October 2026: A Guide to This Week’s Releases",
+    "date": "2026-10-16",
+    "url": "south-indian-ott-october-2026-malayalam-tamil-streaming-guide.html",
+    "alt": "South Indian OTT in October 2026: A Guide to This Week’s Releases",
+    "description": "A regional streaming roundup for South Indian viewers, with Malayalam and Tamil titles to look up and practical checks for language, platform and release status.",
+    "keywords": "South Indian OTT October 2026, Malayalam movies, Tamil films, regional streaming, OTT releases India"
+  },
+  {
+    "category": "Gaming",
+    "title": "Peak Comes to PS5 on October 22: Why Cross-Play Co-op Matters",
+    "date": "2026-10-16",
+    "url": "peak-ps5-october-22-crossplay-co-op-climbing-game.html",
+    "alt": "Peak Comes to PS5 on October 22: Why Cross-Play Co-op Matters",
+    "description": "The climbing game Peak is scheduled for PS5 on October 22 with cross-play co-op. Here is what the announcement means for groups planning to play together.",
+    "keywords": "Peak PS5, Peak release date October 22, crossplay, co-op climbing game, PlayStation"
+  },
+  {
+    "category": "Space",
+    "title": "ISRO Opens a Fourth Aditya-L1 Observation Cycle: Why Researchers Should Care",
+    "date": "2026-10-16",
+    "url": "isro-aditya-l1-fourth-observation-opportunity-october-2026.html",
+    "alt": "ISRO Opens a Fourth Aditya-L1 Observation Cycle: Why Researchers Should Care",
+    "description": "ISRO’s October 16 announcement invites proposals for the fourth Aditya-L1 observation cycle, making more solar observing time available to the research community.",
+    "keywords": "ISRO Aditya-L1, solar physics, Sun-Earth L1, India space science, October 2026 research opportunity"
+  },
+  {
+    "category": "Technology",
+    "title": "HCLTech and Anthropic’s AI Partnership: What Indian Businesses Should Watch",
+    "date": "2026-10-16",
+    "url": "hcltech-anthropic-enterprise-agentic-ai-partnership-india-2026.html",
+    "alt": "HCLTech and Anthropic’s AI Partnership: What Indian Businesses Should Watch",
+    "description": "HCLTech and Anthropic have announced an enterprise AI partnership focused on agentic tools, cybersecurity and governance. Here is what matters for buyers.",
+    "keywords": "HCLTech, Anthropic, Claude, enterprise AI, agentic AI, India technology, governance"
+  },
+  {
+    "category": "Anime",
+    "title": "A Returner’s Magic Should Be Special Season 2: What to Remember",
+    "date": "2026-10-16",
+    "url": "a-returners-magic-should-be-special-season-2-october-2026-guide.html",
+    "alt": "A Returner’s Magic Should Be Special Season 2: What to Remember",
+    "description": "Season 2 of A Returner’s Magic Should Be Special is in Crunchyroll’s Fall 2026 lineup. Here is a concise refresher and a guide to following the new episodes.",
+    "keywords": "A Returner's Magic Should Be Special Season 2, Desir, Crunchyroll, Fall 2026 anime, fantasy anime"
+  },
+  {
+    "category": "Movies",
+    "title": "Tenzing on Streaming: How to Watch a Biographical Film Critically",
+    "date": "2026-10-16",
+    "url": "tenzing-biographical-film-streaming-october-2026-watch-context.html",
+    "alt": "Tenzing on Streaming: How to Watch a Biographical Film Critically",
+    "description": "Tenzing is among the films highlighted in the October 16 streaming roundups. Here is how to approach a biographical film and separate drama from documented history.",
+    "keywords": "Tenzing film, biographical movie, streaming October 2026, Tom Hiddleston, historical accuracy"
+  },
+  {
+    "category": "Gaming",
+    "title": "Halloween 2026 Horror Games: A Late-October Checklist",
+    "date": "2026-10-16",
+    "url": "halloween-2026-horror-games-october-picks-platform-checklist.html",
+    "alt": "Halloween 2026 Horror Games: A Late-October Checklist",
+    "description": "October’s release calendar mixes survival horror, psychological puzzles and big-budget releases. Use this checklist to choose a game that fits your platform and play style.",
+    "keywords": "Halloween horror games 2026, Hellraiser Revival, Tenebris Somnia, Remothered, October game releases"
+  },
+  {
+    "category": "Space",
+    "title": "SpaceX CRS-35: The Science and Hardware Flying to the ISS",
+    "date": "2026-10-16",
+    "url": "spacex-crs-35-iss-research-cubesats-october-2026.html",
+    "alt": "SpaceX CRS-35: The Science and Hardware Flying to the ISS",
+    "description": "NASA’s CRS-35 resupply mission launched on October 13 with more than 6,300 pounds of cargo, including experiments and the final pair of station roll-out solar arrays.",
+    "keywords": "SpaceX CRS-35, NASA, International Space Station, CubeSats, solar arrays, October 2026"
+  },
+  {
+    "category": "Technology",
+    "title": "AI’s Power Problem: Electricity, Data Centres and the Cost of Scale",
+    "date": "2026-10-16",
+    "url": "ai-boom-electricity-data-centers-governance-imf-warning-october-2026.html",
+    "alt": "AI’s Power Problem: Electricity, Data Centres and the Cost of Scale",
+    "description": "The IMF’s October warning on AI safeguards points to a bigger question: who pays for computing capacity, electricity and the risks if returns disappoint?",
+    "keywords": "AI infrastructure, data centres, electricity demand, IMF, AI governance, energy and AI"
+  },
+  {
+    "category": "Anime",
+    "title": "How to Follow Fall 2026 Anime Simulcasts, Subtitles and Dubs",
+    "date": "2026-10-16",
+    "url": "how-to-follow-fall-2026-anime-simulcasts-subs-dubs-region-guide.html",
+    "alt": "How to Follow Fall 2026 Anime Simulcasts, Subtitles and Dubs",
+    "description": "A practical guide to tracking Fall 2026 anime across regions, release times, subtitle versions and dubbing schedules without missing new episodes.",
+    "keywords": "anime simulcast, Fall 2026 anime, subtitle release, anime dub schedule, streaming regions, Crunchyroll"
+  },
+  {
+    "category": "Movies",
+    "title": "How to Plan a Halloween Streaming Marathon Without the Endless Scroll",
+    "date": "2026-10-16",
+    "url": "how-to-plan-halloween-streaming-marathon-october-2026.html",
+    "alt": "How to Plan a Halloween Streaming Marathon Without the Endless Scroll",
+    "description": "Build a better Halloween movie night with a few tone-matched picks, sensible age checks and a quick availability check across streaming services.",
+    "keywords": "Halloween streaming, horror movie marathon, October 2026 movies, Paramount+, watchlist tips"
+  },
+  {
+    "category": "Gaming",
+    "title": "Mycopunk Joins PlayStation Plus on October 20: A Co-op First Look",
+    "date": "2026-10-16",
+    "url": "mycopunk-playstation-plus-october-20-coop-shooter-first-look.html",
+    "alt": "Mycopunk Joins PlayStation Plus on October 20: A Co-op First Look",
+    "description": "Mycopunk joins October’s PlayStation Plus Game Catalog as a day-one release. Here is what Sony says about its mission-based co-op shooter and how to prepare.",
+    "keywords": "Mycopunk, PlayStation Plus October 2026, co-op looter shooter, PS5 games, game catalog"
+  },
+  {
+    "category": "Space",
+    "title": "ExoMars Rover Twin Rehearses Its First Drive on Earth",
+    "date": "2026-10-16",
+    "url": "exomars-rover-twin-first-drive-rehearsal-october-2026.html",
+    "alt": "ExoMars Rover Twin Rehearses Its First Drive on Earth",
+    "description": "ESA’s full-scale rover twin rehearsed leaving a simulated Mars lander, testing ramps, slopes and uneven terrain ahead of a critical mission manoeuvre.",
+    "keywords": "ESA ExoMars, Rosalind Franklin rover, Mars rover test, rover egress, October 2026"
+  },
+  {
     "category": "Anime",
     "title": "Fall 2026 Anime Season Guide: What to Watch This October",
     "date": "2026-10-09",
