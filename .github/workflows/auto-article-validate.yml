@@ -1,4 +1,4 @@
-name: Validate Insight Forge Automation
+name: Validate Insight Forge Site
 
 on:
   push:
@@ -87,12 +87,3 @@ jobs:
           print(f"Image sitemap OK: {len(image_pages)} pages, {len(image_urls)} existing image assets.")
           PY
 
-      - name: YAML sanity
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          text = Path(".github/workflows/auto-article.yml").read_text(encoding="utf-8")
-          assert "scripts/auto_publish.py" in text
-          assert "scripts/auto_enhance.py" in text
-          print("Automation workflow references verified.")
-          PY
