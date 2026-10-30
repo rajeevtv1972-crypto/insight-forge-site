@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Insight Forge — Tech, Anime, Movies, Gaming & Space</title>
+<title>Insight Forge — Tech, Anime, Movies, Gaming, Space & Automobile</title>
 <meta name="description" content="Insight Forge brings fresh stories and explainers across anime, movies, technology, gaming and space. Discover the top story, latest news and category picks in one magazine-style homepage.">
 <meta name="keywords" content="Anime, Movies, MCU, Technology, Space, Gaming, News 2026">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://insight-forge-site.pages.dev/social-share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Insight Forge">
-<meta name="twitter:description" content="Tech, Anime, Movies, Gaming & Space — explained.">
+<meta name="twitter:description" content="Tech, Anime, Movies, Gaming, Space & Automobile — explained.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3756147512527882" crossorigin="anonymous"></script>
 <script type="application/ld+json">{
   "@context":"https://schema.org",
@@ -423,7 +423,7 @@ footer a{color:#d7e4ff;margin:0 8px}
   <div class="header-inner">
     <span class="eyebrow">✦ Welcome to Insight Forge</span>
     <h1>Explore More.</h1>
-    <p>A magazine-style front page for the stories shaping anime, movies, technology, gaming and space — all in one place.</p>
+    <p>A magazine-style front page for the stories shaping anime, movies, technology, gaming, space and automobile news — all in one place.</p>
     <div class="header-links">
       <a class="primary" href="#top-story">🔥 Top story</a>
       <a href="latest-news.html">📰 Latest</a>
@@ -432,6 +432,7 @@ footer a{color:#d7e4ff;margin:0 8px}
       <a href="tech.html">💻 Tech</a>
       <a href="space-science.html">🚀 Space</a>
       <a href="gaming.html">🎮 Gaming</a>
+      <a href="automobile.html">🚗 Automobile</a>
     </div>
   </div>
 </header>
@@ -444,6 +445,7 @@ footer a{color:#d7e4ff;margin:0 8px}
     <a href="tech.html">Tech</a>
     <a href="space-science.html">Space</a>
     <a href="gaming.html">Gaming</a>
+    <a href="automobile.html">Automobile</a>
     <a href="latest-news.html">Latest</a>
     <a href="about.html">About</a>
   </div>
@@ -455,7 +457,7 @@ footer a{color:#d7e4ff;margin:0 8px}
       <div><h2>🔥 Top Story</h2><p>The newest featured story from the Insight Forge feed.</p></div>
       <a class="view-all" href="latest-news.html">See all stories →</a>
     </div>
-    <div id="hero-slot" class="hero-card"><div class="hero-media"><img src="" alt="AI Agents Breached Indian Systems: What the CERT-In Report Means" fetchpriority="high" decoding="async"></div><div class="hero-copy"><span class="hero-kicker">🔥 Technology · Featured</span><h2>AI Agents Breached Indian Systems: What the CERT-In Report Means</h2><p>A reported AI-agent security incident in India shows why testing environments, permissions and human oversight must be designed before autonomous tools go live.</p><div class="hero-meta">16 Oct 2026 · Published on Insight Forge</div><div class="hero-actions"><a href="ai-agents-breached-indian-systems-cert-in-october-2026.html">Read Story →</a><a class="secondary" href="tech">More Technology</a></div></div></div>
+    <div id="hero-slot" class="hero-card"><div class="hero-media"><img src="image/latest-automobile.svg" alt="South Korean Court Rejects Tesla FSD Refund Claim: What the Ruling Actually Says" fetchpriority="high" decoding="async"></div><div class="hero-copy"><span class="hero-kicker">🚗 Automobile · Featured</span><h2>South Korean Court Rejects Tesla FSD Refund Claim: What the Ruling Actually Says</h2><p>A Seoul court rejected a Tesla Full Self-Driving refund suit, but the decision turns on contract terms and driver supervision—not proof of full autonomy.</p><div class="hero-meta">30 Oct 2026 · Published on Insight Forge</div><div class="hero-actions"><a href="south-korea-tesla-fsd-refund-lawsuit-ruling-october-2026">Read Story →</a><a class="secondary" href="automobile.html">More Automobile</a></div></div></div>
   </section>
 
   <!-- Permanent house promotion: intentionally outside the dynamic article feed. -->
@@ -510,7 +512,7 @@ footer a{color:#d7e4ff;margin:0 8px}
   </section>
 
   <div class="footer-note">
-    More stories are added regularly across Anime, Movies, Technology, Space and Gaming. Bookmark Insight Forge and check back for the next update.
+    More stories are added regularly across Anime, Movies, Technology, Space, Gaming and Automobile. Bookmark Insight Forge and check back for the next update.
   </div>
 </main>
 
@@ -521,13 +523,14 @@ footer a{color:#d7e4ff;margin:0 8px}
 
 <script>
 (function(){
-  const FEED_URL = 'latest-news.json?v=3';
+  const FEED_URL = 'latest-news.json?v=4';
   const CATEGORIES = [
     {key:'Anime', icon:'🎌', slug:'anime.html', desc:'News, seasons & guides'},
     {key:'Movies', icon:'🎬', slug:'movies.html', desc:'Blockbusters, reviews & explainers'},
     {key:'Technology', icon:'💻', slug:'tech.html', desc:'AI, hardware & innovation'},
     {key:'Space', icon:'🚀', slug:'space-science.html', desc:'NASA, astronomy & science'},
-    {key:'Gaming', icon:'🎮', slug:'gaming.html', desc:'Releases, updates & gaming news'}
+    {key:'Gaming', icon:'🎮', slug:'gaming.html', desc:'Releases, updates & gaming news'},
+    {key:'Automobile', icon:'🚗', slug:'automobile.html', desc:'Cars, EVs & auto-industry news'}
   ];
 
   function escapeHTML(value){

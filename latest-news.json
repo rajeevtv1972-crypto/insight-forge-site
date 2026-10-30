@@ -1,5 +1,65 @@
 [
   {
+    "category": "Automobile",
+    "title": "South Korean Court Rejects Tesla FSD Refund Claim: What the Ruling Actually Says",
+    "date": "2026-10-30",
+    "url": "south-korea-tesla-fsd-refund-lawsuit-ruling-october-2026.html",
+    "alt": "South Korean Court Rejects Tesla FSD Refund Claim: What the Ruling Actually Says",
+    "description": "A Seoul court rejected a Tesla Full Self-Driving refund suit, but the decision turns on contract terms and driver supervision—not proof of full autonomy.",
+    "keywords": "Tesla, Full Self-Driving, FSD, South Korea court, driver assistance, autonomous driving, October 2026",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Tesla’s Q3 2026: Strong Deliveries, Softer Profit and the AI Bet",
+    "date": "2026-10-30",
+    "url": "tesla-q3-2026-results-deliveries-profit-margins-explained.html",
+    "alt": "Tesla’s Q3 2026: Strong Deliveries, Softer Profit and the AI Bet",
+    "description": "Tesla delivered 486,532 vehicles in Q3 2026, while revenue stayed almost flat and net income fell year over year. Here is what the numbers reveal.",
+    "keywords": "Tesla Q3 2026, Tesla earnings, 486532 deliveries, revenue, net income, automotive margins, EV market",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Tesla Model Y’s ₹19,990 Pitch: What the India EMI Offer Really Means",
+    "date": "2026-10-30",
+    "url": "tesla-model-y-india-19990-monthly-cost-offer-explained-october-2026.html",
+    "alt": "Tesla Model Y’s ₹19,990 Pitch: What the India EMI Offer Really Means",
+    "description": "Tesla's October India campaign advertised an effective Model Y cost of ₹19,990 a month, but the actual EMI was ₹39,990 before estimated running-cost savings.",
+    "keywords": "Tesla Model Y India, ₹19990, EMI, Switch and Save Carnival, Tesla India, electric SUV, ownership cost",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Hyundai BAYON Launches in India at ₹9.99 Lakh: Engine, Tech and Safety",
+    "date": "2026-10-30",
+    "url": "hyundai-bayon-india-launch-price-features-engine-october-2026.html",
+    "alt": "Hyundai BAYON Launches in India at ₹9.99 Lakh: Engine, Tech and Safety",
+    "description": "Hyundai has launched the BAYON in India from ₹9.99 lakh ex-showroom, with a 115 PS petrol engine, two transmission choices and a feature-rich cockpit.",
+    "keywords": "Hyundai BAYON India launch, price, 1.5 MPi petrol, 115 PS, ADAS, October 2026",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Volkswagen’s India EV Pause: What Its JSW Partnership Talks Could Mean",
+    "date": "2026-10-30",
+    "url": "volkswagen-india-ev-investment-pause-jsw-talks-october-2026.html",
+    "alt": "Volkswagen’s India EV Pause: What Its JSW Partnership Talks Could Mean",
+    "description": "A report says Volkswagen has paused further investment in its India EV programme while discussions with JSW Group continue. The pause is not a confirmed cancellation.",
+    "keywords": "Volkswagen India EV, JSW Group partnership, electric car investment, India auto industry, October 2026",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "India’s Festive Auto Demand: Why Two-Wheelers Are Outpacing Passenger Cars",
+    "date": "2026-10-30",
+    "url": "india-festive-auto-sales-two-wheelers-passenger-cars-october-2026.html",
+    "alt": "India’s Festive Auto Demand: Why Two-Wheelers Are Outpacing Passenger Cars",
+    "description": "A Jefferies snapshot for the first 14 days of the festive season showed two-wheeler registrations rising 16% year over year while passenger-vehicle registrations fell 6%.",
+    "keywords": "India auto sales October 2026, festive demand, two wheeler registrations, passenger vehicles, Jefferies",
+    "image": "image/latest-automobile.svg"
+  },
+  {
     "category": "Technology",
     "title": "AI Agents Breached Indian Systems: What the CERT-In Report Means",
     "date": "2026-10-16",

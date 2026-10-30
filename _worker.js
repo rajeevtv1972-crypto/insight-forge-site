@@ -220,7 +220,7 @@ export default {
     const pageCanonicalPath = !rawCanonicalPath || /^\/index$/i.test(rawCanonicalPath) ? '/' : rawCanonicalPath;
     const pageCanonicalUrl = url.origin + pageCanonicalPath;
     const routePath = pathname.replace(/^\/+|\/+$/g, '').replace(/\.html$/i, '').toLowerCase();
-    const nonArticleRoutes = new Set(['', 'index', 'search', 'anime', 'movies', 'tech', 'gaming', 'space-science', 'latest-news', 'about', 'contact', 'privacy-policy', 'faq', 'sports']);
+    const nonArticleRoutes = new Set(['', 'index', 'search', 'anime', 'movies', 'tech', 'gaming', 'space-science', 'latest-news', 'about', 'contact', 'privacy-policy', 'faq', 'sports', 'automobile']);
     const isLikelyArticle = Boolean(routePath) && !nonArticleRoutes.has(routePath) &&
       !routePath.includes('/') && /^[a-z0-9][a-z0-9-]*$/.test(routePath);
 
@@ -294,7 +294,7 @@ export default {
     }
 
     function buildBreadcrumbData(meta, topic, pageUrl) {
-      const categoryMap = {Anime:'anime.html',Movies:'movies.html',Technology:'tech.html',Space:'space-science.html',Gaming:'gaming.html'};
+      const categoryMap = {Anime:'anime.html',Movies:'movies.html',Technology:'tech.html',Space:'space-science.html',Gaming:'gaming.html',Automobile:'automobile.html'};
       const list = [
         {'@type':'ListItem',position:1,name:'Home',item:new URL('/',pageUrl.origin).href},
         {'@type':'ListItem',position:2,name:meta.category || 'Stories',item:new URL(categoryMap[meta.category] || 'latest-news.html',pageUrl.origin + '/').href}
@@ -319,7 +319,7 @@ export default {
     const breadcrumbMarkup = articleMeta ? [
       '<div class="if-breadcrumb" aria-label="Breadcrumb">',
       '<a href="/">Home</a><span class="if-sep" aria-hidden="true">→</span>',
-      '<a href="/', escapeAttr(({'Anime':'anime.html','Movies':'movies.html','Technology':'tech.html','Space':'space-science.html','Gaming':'gaming.html'})[articleMeta.category] || 'latest-news.html'), '">',
+      '<a href="/', escapeAttr(({'Anime':'anime.html','Movies':'movies.html','Technology':'tech.html','Space':'space-science.html','Gaming':'gaming.html','Automobile':'automobile.html'})[articleMeta.category] || 'latest-news.html'), '">',
       escapeText(articleMeta.category || 'Stories'), '</a>',
       breadcrumbTopic ? '<span class="if-sep" aria-hidden="true">→</span><a href="' + escapeAttr(breadcrumbTopic.url) + '">' + escapeText(breadcrumbTopic.name) + '</a>' : '',
       '<span class="if-sep" aria-hidden="true">→</span><span class="if-current">',
