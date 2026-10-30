@@ -441,7 +441,7 @@ export default {
     const themed = new HTMLRewriter()
       .on('head', {
         element(element) {
-          element.append(`<link rel="canonical" href="${escapeAttr(articleMeta ? articleMeta.url : pageCanonicalUrl)}"><link rel="stylesheet" href="${THEME_HREF}"><link rel="icon" href="${FAVICON_HREF}" type="image/svg+xml" sizes="any"><meta property="og:url" content="${escapeAttr(articleMeta ? articleMeta.url : pageCanonicalUrl)}">`, { html: true });
+          element.append(`<link rel="canonical" href="${escapeAttr(articleMeta ? articleMeta.url : pageCanonicalUrl)}"><link rel="stylesheet" href="${THEME_HREF}"><link rel="icon" href="${FAVICON_HREF}" type="image/svg+xml" sizes="any"><meta name="google-adsense-account" content="ca-pub-3756147512527882"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3756147512527882" crossorigin="anonymous"></script><meta property="og:url" content="${escapeAttr(articleMeta ? articleMeta.url : pageCanonicalUrl)}">`, { html: true });
 
           if (articleMeta) {
             element.append(
