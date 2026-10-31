@@ -1,5 +1,145 @@
 [
   {
+    "category": "Anime",
+    "title": "The Apothecary Diaries: The Late Lady’s Treasure Sets Its Cinema Plan",
+    "date": "2026-10-31",
+    "url": "apothecary-diaries-late-ladys-treasure-global-film-release.html",
+    "alt": "The Apothecary Diaries: The Late Lady’s Treasure Sets Its Cinema Plan",
+    "description": "Crunchyroll secured international theatrical rights to the first Apothecary Diaries anime film. Japan opens December 11; overseas dates will be confirmed by territory.",
+    "keywords": "The Apothecary Diaries, The Late Lady's Treasure, anime film, Crunchyroll, Natsu Hyuuga",
+    "image": "image/latest-anime.svg"
+  },
+  {
+    "category": "Anime",
+    "title": "Made in Abyss Theatrical Series Part 2 Is Confirmed",
+    "date": "2026-10-31",
+    "url": "made-in-abyss-theatrical-series-part-two-confirmed.html",
+    "alt": "Made in Abyss Theatrical Series Part 2 Is Confirmed",
+    "description": "A second part of the Made in Abyss theatrical series has been announced. No release date has been confirmed yet.",
+    "keywords": "Made in Abyss, Awakening Mystery, Theatrical Series Part 2, Srajo, Nana Mizuki",
+    "image": "image/latest-anime.svg"
+  },
+  {
+    "category": "Movies",
+    "title": "Ramayana: Part One Gets First Reactions Ahead of November 5 Release",
+    "date": "2026-10-31",
+    "url": "ramayana-part-one-la-premiere-first-reactions-release.html",
+    "alt": "Ramayana: Part One Gets First Reactions Ahead of November 5 Release",
+    "description": "The film’s Los Angeles premiere has produced an early mix of praise and criticism. These first reactions are not a substitute for full reviews.",
+    "keywords": "Ramayana Part One, Ranbir Kapoor, Yash, Sai Pallavi, LA premiere, November 5 2026",
+    "image": "image/latest-movies.svg"
+  },
+  {
+    "category": "Movies",
+    "title": "India’s November 2026 Movie Calendar: What to Watch in Theatres",
+    "date": "2026-10-31",
+    "url": "india-november-2026-theatrical-release-calendar.html",
+    "alt": "India’s November 2026 Movie Calendar: What to Watch in Theatres",
+    "description": "November’s Indian cinema calendar is filling up, with Ramayana: Part One among the major titles listed for the opening week. Dates may change.",
+    "keywords": "India movie releases November 2026, Ramayana Part One, Indian cinema, theatre release calendar",
+    "image": "image/latest-movies.svg"
+  },
+  {
+    "category": "Technology",
+    "title": "Gemini 4 Carbon: Google’s New AI Model Targets Cybersecurity Work",
+    "date": "2026-10-31",
+    "url": "google-gemini-4-carbon-cybersecurity-model.html",
+    "alt": "Gemini 4 Carbon: Google’s New AI Model Targets Cybersecurity Work",
+    "description": "Google introduced Gemini 4 Carbon with an initial cybersecurity-focused rollout. Its performance figures are company-reported benchmarks, and access is limited.",
+    "keywords": "Google Gemini 4 Carbon, cybersecurity AI, frontier model, AI security, Fairwind program",
+    "image": "image/latest-tech.svg"
+  },
+  {
+    "category": "Technology",
+    "title": "Samsung’s Record Q3 Profit Shows How AI Is Rewriting the Chip Market",
+    "date": "2026-10-31",
+    "url": "samsung-q3-2026-ai-chip-demand-shortage.html",
+    "alt": "Samsung’s Record Q3 Profit Shows How AI Is Rewriting the Chip Market",
+    "description": "Samsung reported record third-quarter operating profit as memory demand surged, underlining the effect of data-centre AI spending.",
+    "keywords": "Samsung Q3 2026 earnings, AI chips, memory, HBM, semiconductor, operating profit",
+    "image": "image/latest-tech.svg"
+  },
+  {
+    "category": "Gaming",
+    "title": "Gundam Battle Operation 3 Announced for PS5 and Steam",
+    "date": "2026-10-31",
+    "url": "gundam-battle-operation-3-announced-ps5-steam.html",
+    "alt": "Gundam Battle Operation 3 Announced for PS5 and Steam",
+    "description": "Bandai Namco has announced a new free-to-play Gundam team-battle game for PS5 and Steam. A firm release date has not been published.",
+    "keywords": "Gundam Battle Operation 3, PS5, Steam, Bandai Namco, free to play, mecha game",
+    "image": "image/latest-gaming.svg"
+  },
+  {
+    "category": "Gaming",
+    "title": "Urban Myth Dissolution Center Arrives on Switch 2 With Two Notable Extras",
+    "date": "2026-10-31",
+    "url": "urban-myth-dissolution-center-switch-2-edition-arrives.html",
+    "alt": "Urban Myth Dissolution Center Arrives on Switch 2 With Two Notable Extras",
+    "description": "The Nintendo Switch 2 edition launched on October 28 with a gallery feature and Joy-Con 2 mouse controls.",
+    "keywords": "Urban Myth Dissolution Center, Nintendo Switch 2, Joy-Con 2 mouse controls, gallery",
+    "image": "image/latest-gaming.svg"
+  },
+  {
+    "category": "Space",
+    "title": "ISRO’s GSLV-F18 Places NVS-03 Into Orbit: Why It Matters for NavIC",
+    "date": "2026-10-31",
+    "url": "isro-gslv-f18-nvs-03-navic-launch-october-2026.html",
+    "alt": "ISRO’s GSLV-F18 Places NVS-03 Into Orbit: Why It Matters for NavIC",
+    "description": "ISRO’s October 30 GSLV-F18 mission carried the next-generation NVS-03 navigation satellite into geosynchronous transfer orbit.",
+    "keywords": "ISRO GSLV-F18, NVS-03, NavIC, Indian navigation satellite, October 30 2026",
+    "image": "image/latest-space.svg"
+  },
+  {
+    "category": "Space",
+    "title": "NASA’s Roman Space Telescope Enters Final Commissioning Before Science Surveys",
+    "date": "2026-10-31",
+    "url": "nasa-roman-space-telescope-final-commissioning-october-2026.html",
+    "alt": "NASA’s Roman Space Telescope Enters Final Commissioning Before Science Surveys",
+    "description": "NASA says the Nancy Grace Roman Space Telescope has entered its final commissioning phase, preparing for major science surveys.",
+    "keywords": "NASA Nancy Grace Roman Space Telescope, commissioning, dark energy, dark matter, exoplanets",
+    "image": "image/latest-space.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "ARAI Opens ₹55-Crore Battery Lab and EV Powertrain Test Facility",
+    "date": "2026-10-31",
+    "url": "arai-advanced-battery-lab-ev-powertrain-facility.html",
+    "alt": "ARAI Opens ₹55-Crore Battery Lab and EV Powertrain Test Facility",
+    "description": "India’s ARAI has inaugurated an advanced battery laboratory and an e-axle / EV powertrain test facility backed by about ₹55 crore.",
+    "keywords": "ARAI, advanced battery laboratory, EV powertrain testing, e-axle, India electric vehicles",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Maruti Suzuki Says e Vitara EV Exports Cross 50,000 Units",
+    "date": "2026-10-31",
+    "url": "maruti-e-vitara-crosses-50000-ev-exports.html",
+    "alt": "Maruti Suzuki Says e Vitara EV Exports Cross 50,000 Units",
+    "description": "Maruti Suzuki says e Vitara exports have crossed 50,000 units since shipments began in August 2025, reaching around 50 countries.",
+    "keywords": "Maruti Suzuki e Vitara, EV exports, 50000 units, India electric vehicle exports",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Sports",
+    "title": "South Africa Set Australia 288 in a Newlands Test Decider",
+    "date": "2026-10-31",
+    "url": "south-africa-australia-third-test-288-run-decider.html",
+    "alt": "South Africa Set Australia 288 in a Newlands Test Decider",
+    "description": "A 288-run target has set up the final day of the tied Test series at Newlands. This is a pre-play snapshot; live conditions may change.",
+    "keywords": "South Africa Australia Test, Newlands, 288 target, Ryan Rickelton, Wiaan Mulder",
+    "image": "image/latest-sports.svg"
+  },
+  {
+    "category": "Sports",
+    "title": "Pedro Acosta Wins Malaysian MotoGP Sprint as Marc Marquez Extends Lead",
+    "date": "2026-10-31",
+    "url": "pedro-acosta-wins-malaysian-motogp-sprint-october-31-2026.html",
+    "alt": "Pedro Acosta Wins Malaysian MotoGP Sprint as Marc Marquez Extends Lead",
+    "description": "Pedro Acosta won the Sepang sprint ahead of Marc Marquez and Marco Bezzecchi. The result strengthened Marquez’s championship advantage.",
+    "keywords": "Pedro Acosta, Malaysian MotoGP sprint, Sepang, Marc Marquez, Marco Bezzecchi, Jorge Martin",
+    "image": "image/latest-sports.svg"
+  },
+  {
     "category": "Automobile",
     "title": "South Korean Court Rejects Tesla FSD Refund Claim: What the Ruling Actually Says",
     "date": "2026-10-30",
