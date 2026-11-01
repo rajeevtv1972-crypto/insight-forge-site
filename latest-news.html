@@ -189,7 +189,7 @@ footer{margin:52px 18px 18px;padding:40px 20px;border-radius:26px;background:#02
 <footer><p>© 2026 Insight Forge. All rights reserved.</p><p><a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy-policy.html">Privacy Policy</a></p></footer>
 <script>
 (function(){
- const FEED='latest-news.json?v=5',input=document.getElementById('archive-search'),groups=document.getElementById('groups'),summary=document.getElementById('summary'),count=document.getElementById('count'),filters=[...document.querySelectorAll('.filter')];
+ const FEED='latest-news.json?v=6',input=document.getElementById('archive-search'),groups=document.getElementById('groups'),summary=document.getElementById('summary'),count=document.getElementById('count'),filters=[...document.querySelectorAll('.filter')];
  let items=[],active='All';
  const esc=v=>String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
  const fmt=v=>{const d=new Date(String(v)+'T00:00:00');return isNaN(d)?String(v||''):d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})};
