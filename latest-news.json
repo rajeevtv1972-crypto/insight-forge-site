@@ -1,6 +1,146 @@
 [
   {
     "category": "Anime",
+    "title": "Hiiragi-san Chi no Kyuuketsu Jijou Gets a TV Anime Adaptation",
+    "date": "2026-11-01",
+    "url": "hiiragi-san-chi-no-kyuuketsu-jijou-anime-adaptation-announced.html",
+    "alt": "Hiiragi-san Chi no Kyuuketsu Jijou Gets a TV Anime Adaptation",
+    "description": "TMS Entertainment announced a television anime adaptation of Miki Yoshikawa’s vampire-family romantic comedy on October 31. Broadcast timing and main cast details have not yet been revealed.",
+    "keywords": "Hiiragi-san Chi no Kyuuketsu Jijou, Miki Yoshikawa, TMS Entertainment, vampire anime, TV anime 2026",
+    "image": "image/latest-anime.svg"
+  },
+  {
+    "category": "Anime",
+    "title": "Death Stranding: Isolations Reveals Its First Teaser and New Story Details",
+    "date": "2026-11-01",
+    "url": "death-stranding-isolations-anime-teaser-2027-disney-plus.html",
+    "alt": "Death Stranding: Isolations Reveals Its First Teaser and New Story Details",
+    "description": "Kojima Productions has released a new teaser for Death Stranding: Isolations, a hand-drawn 2D animated series set in the game universe and planned for Disney services in 2027.",
+    "keywords": "Death Stranding Isolations, Hideo Kojima, Disney Plus, E&H production, anime series 2027, Tow Ubukata",
+    "image": "image/latest-anime.svg"
+  },
+  {
+    "category": "Movies",
+    "title": "Scene Trailer: Suriya’s Cop Reopens an Unfinished Case Ahead of November 6",
+    "date": "2026-11-01",
+    "url": "scene-suriya-jithu-madhavan-trailer-november-6-release.html",
+    "alt": "Scene Trailer: Suriya’s Cop Reopens an Unfinished Case Ahead of November 6",
+    "description": "The makers released the trailer for Jithu Madhavan’s Tamil film Scene on October 31, showing Suriya as police officer Inbaraj and teasing a crime story with action, mystery and comedy.",
+    "keywords": "Scene trailer, Suriya, Jithu Madhavan, Nazriya Nazim, Naslen, November 6 2026 Tamil film",
+    "image": "image/latest-movies.svg"
+  },
+  {
+    "category": "Movies",
+    "title": "Pa. Ranjith’s Vettuvam Locks in a Pongal 2027 Theatrical Release",
+    "date": "2026-11-01",
+    "url": "vettuvam-pa-ranjith-pongal-2027-release-announced.html",
+    "alt": "Pa. Ranjith’s Vettuvam Locks in a Pongal 2027 Theatrical Release",
+    "description": "Pa. Ranjith has announced a January 2027 Pongal release window for Vettuvam, his action drama starring Arya, Sobhita Dhulipala and an ensemble cast.",
+    "keywords": "Vettuvam, Pa Ranjith, Arya, Sobhita Dhulipala, Pongal 2027, Tamil cinema",
+    "image": "image/latest-movies.svg"
+  },
+  {
+    "category": "Technology",
+    "title": "OpenAI Backs a Shared robots.txt Signal for AI Training Preferences",
+    "date": "2026-11-01",
+    "url": "openai-robots-txt-shared-ai-training-preference-signal-explained.html",
+    "alt": "OpenAI Backs a Shared robots.txt Signal for AI Training Preferences",
+    "description": "OpenAI says it will honour a proposed cross-provider robots.txt signal that lets website owners express preferences about using site content for generative-AI training. Implementation is still forthcoming.",
+    "keywords": "OpenAI robots.txt AI training preference signal IETF AI Preferences Working Group website publishers crawler controls",
+    "image": "image/latest-tech.svg"
+  },
+  {
+    "category": "Technology",
+    "title": "Google Genie 4: A World Model Built for Real-Time Interactive Simulations",
+    "date": "2026-11-01",
+    "url": "google-genie-4-world-model-real-time-interactive-simulation.html",
+    "alt": "Google Genie 4: A World Model Built for Real-Time Interactive Simulations",
+    "description": "Google DeepMind has introduced Genie 4, a research world model that generates interactive scenes with natural-language control and native audio. Access is limited to trusted testers for now.",
+    "keywords": "Google Genie 4, Google DeepMind world model, interactive simulation, generative AI, real-time audio, Project Genie",
+    "image": "image/latest-tech.svg"
+  },
+  {
+    "category": "Gaming",
+    "title": "FromSoftware Moves The Duskbloods from 2026 to 2027",
+    "date": "2026-11-01",
+    "url": "the-duskbloods-switch-2-delayed-to-2027.html",
+    "alt": "FromSoftware Moves The Duskbloods from 2026 to 2027",
+    "description": "FromSoftware has shifted the release window for its Nintendo Switch 2 multiplayer title The Duskbloods to 2027, citing additional balancing and rule adjustments after the August network test.",
+    "keywords": "The Duskbloods, FromSoftware, Nintendo Switch 2, delay 2027, multiplayer action, KADOKAWA",
+    "image": "image/latest-gaming.svg"
+  },
+  {
+    "category": "Gaming",
+    "title": "Nintendo’s October Indie World Highlights New Switch 2 Games and Demos",
+    "date": "2026-11-01",
+    "url": "nintendo-indie-world-october-2026-switch-2-highlights.html",
+    "alt": "Nintendo’s October Indie World Highlights New Switch 2 Games and Demos",
+    "description": "Nintendo’s October 28 Indie World showcase spotlighted games arriving across Switch and Switch 2, including Witchbrook, Winds of Viridia and four new demos available through the eShop.",
+    "keywords": "Nintendo Indie World October 28 2026, Switch 2, Witchbrook, Winds of Viridia, Haunted Paws, Petal Runner",
+    "image": "image/latest-gaming.svg"
+  },
+  {
+    "category": "Space",
+    "title": "NASA Asks Industry How to Extend Hubble’s Life in Orbit",
+    "date": "2026-11-01",
+    "url": "nasa-hubble-commercial-servicing-orbit-boost-study-2026.html",
+    "alt": "NASA Asks Industry How to Extend Hubble’s Life in Orbit",
+    "description": "NASA has issued a Request for Information about possible commercial missions to boost Hubble’s orbit, service the telescope or safely dispose of it at end of mission. No servicing contract has been awarded.",
+    "keywords": "NASA Hubble servicing, commercial space servicing, orbit boost, RFI October 29 2026, Hubble telescope 2034",
+    "image": "image/latest-space.svg"
+  },
+  {
+    "category": "Space",
+    "title": "Hubble and Webb Reveal a New View of the Cat’s Head Nebula",
+    "date": "2026-11-01",
+    "url": "webb-hubble-cats-head-nebula-carina-star-formation-2026.html",
+    "alt": "Hubble and Webb Reveal a New View of the Cat’s Head Nebula",
+    "description": "NASA’s October 29 release combines Hubble and James Webb observations of a dusty star-forming pillar about 7,500 light-years away in the Carina Nebula.",
+    "keywords": "Cat's Head Nebula, NASA Hubble, James Webb Space Telescope, Carina Nebula, star formation, October 2026",
+    "image": "image/latest-space.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Delhi’s Winter Rules Start Today: Which Vehicles Face the Non-BS6 Entry Ban?",
+    "date": "2026-11-01",
+    "url": "delhi-winter-pollution-plan-non-bs6-vehicle-rules-november-2026.html",
+    "alt": "Delhi’s Winter Rules Start Today: Which Vehicles Face the Non-BS6 Entry Ban?",
+    "description": "Delhi’s winter pollution plan takes effect on November 1. Non-Delhi-registered vehicles below BS-VI are barred until January 31, with CNG, electric and essential-service exemptions; the No PUC, No Fuel rule also applies.",
+    "keywords": "Delhi winter pollution plan November 1 2026, non BS6 vehicle ban, No PUC No Fuel, BS6, CNG EV exemptions, GRAP",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Range Rover Electric and Range Rover Sport Electric Set for India in 2027",
+    "date": "2026-11-01",
+    "url": "range-rover-electric-range-rover-sport-india-cbu-launch-2027.html",
+    "alt": "Range Rover Electric and Range Rover Sport Electric Set for India in 2027",
+    "description": "JLR plans to bring the electric Range Rover and Range Rover Sport to India as completely built imports initially, with a possible local-assembly decision after it gauges demand.",
+    "keywords": "Range Rover Electric India, Range Rover Sport Electric, JLR India CBU, 2027 launch, electric luxury SUV",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Sports",
+    "title": "Fakhar Zaman’s 127 Leads Pakistan to ODI Tri-Series Title Over Sri Lanka",
+    "date": "2026-11-01",
+    "url": "pakistan-win-sri-lanka-odi-tri-series-final-fakhar-zaman-century.html",
+    "alt": "Fakhar Zaman’s 127 Leads Pakistan to ODI Tri-Series Title Over Sri Lanka",
+    "description": "Pakistan chased 326 to beat Sri Lanka by three wickets in the Lahore final on October 31, with Fakhar Zaman’s 127 and a late partnership sealing the win.",
+    "keywords": "Pakistan Sri Lanka ODI tri-series final, Fakhar Zaman 127, 326 chase, Lahore October 31 2026, Kamindu Mendis",
+    "image": "image/latest-sports.svg"
+  },
+  {
+    "category": "Sports",
+    "title": "Lewis Hamilton Takes Mexico City GP Pole by Just 0.009 Seconds",
+    "date": "2026-11-01",
+    "url": "lewis-hamilton-takes-mexico-city-grand-prix-pole-2026.html",
+    "alt": "Lewis Hamilton Takes Mexico City GP Pole by Just 0.009 Seconds",
+    "description": "Hamilton topped qualifying for the 2026 Mexico City Grand Prix in 1:16.514, narrowly ahead of George Russell. The 71-lap race is still to come on November 1 local time.",
+    "keywords": "Lewis Hamilton Mexico City GP pole 2026, Formula 1 qualifying, George Russell, Charles Leclerc, Mexico Grand Prix",
+    "image": "image/latest-sports.svg"
+  },
+  {
+    "category": "Anime",
     "title": "The Apothecary Diaries: The Late Lady’s Treasure Sets Its Cinema Plan",
     "date": "2026-10-31",
     "url": "apothecary-diaries-late-ladys-treasure-global-film-release.html",
