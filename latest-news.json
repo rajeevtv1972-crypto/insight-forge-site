@@ -1,6 +1,146 @@
 [
   {
     "category": "Anime",
+    "title": "Laid-Back Camp Season 4 Reveals New Trailer and April 2027 Premiere",
+    "date": "2026-11-06",
+    "url": "laid-back-camp-season-4-april-2027-trailer-visual.html",
+    "alt": "Laid-Back Camp Season 4 Reveals New Trailer and April 2027 Premiere",
+    "description": "Laid-Back Camp Season 4 has unveiled a new trailer and visual, confirming an April 2027 broadcast. FuRyu Pictures takes over animation production, with the core cast returning.",
+    "keywords": "Laid-Back Camp Season 4, Yuru Camp, April 2027 anime, FuRyu Pictures, trailer",
+    "image": "image/latest-anime.svg"
+  },
+  {
+    "category": "Anime",
+    "title": "The Dangers in My Heart Season 3 Sets April 2027 Return",
+    "date": "2026-11-06",
+    "url": "dangers-in-my-heart-season-3-april-2027-trailer.html",
+    "alt": "The Dangers in My Heart Season 3 Sets April 2027 Return",
+    "description": "The Dangers in My Heart has revealed a Season 3 teaser visual and trailer, confirming an April 2027 premiere and continuing Kyotaro and Anna’s story after Season 2.",
+    "keywords": "The Dangers in My Heart Season 3, BokuYaba, April 2027, teaser trailer, Shin-Ei Animation",
+    "image": "image/latest-anime.svg"
+  },
+  {
+    "category": "Movies",
+    "title": "Ramayana: Part One Opens with a Strong ₹64.85 Crore India Net Estimate",
+    "date": "2026-11-06",
+    "url": "ramayana-part-one-opening-day-box-office-november-2026.html",
+    "alt": "Ramayana: Part One Opens with a Strong ₹64.85 Crore India Net Estimate",
+    "description": "Early box-office tracking puts Ramayana: Part One at about ₹64.85 crore net in India on its first day, though the figure is a trade estimate rather than an audited final total.",
+    "keywords": "Ramayana Part One, box office, Ranbir Kapoor, India opening day, November 2026",
+    "image": "image/latest-movies.svg"
+  },
+  {
+    "category": "Movies",
+    "title": "Scene Opens in Theatres: Early Audience Reactions Focus on Suriya and Its Twists",
+    "date": "2026-11-06",
+    "url": "scene-suriya-release-day-audience-reactions-november-2026.html",
+    "alt": "Scene Opens in Theatres: Early Audience Reactions Focus on Suriya and Its Twists",
+    "description": "Suriya and Naslen’s Tamil film Scene reached theatres on November 6. Early social-media reactions praise the performances and entertainment value, but they are not a substitute for full reviews.",
+    "keywords": "Scene movie, Suriya, Jithu Madhavan, Naslen, Tamil cinema, November 6 2026",
+    "image": "image/latest-movies.svg"
+  },
+  {
+    "category": "Technology",
+    "title": "OpenAI Introduces GPT-6 Cyber, a Restricted Model for Cybersecurity Work",
+    "date": "2026-11-06",
+    "url": "openai-gpt-6-cyber-cybersecurity-model-launch-2026.html",
+    "alt": "OpenAI Introduces GPT-6 Cyber, a Restricted Model for Cybersecurity Work",
+    "description": "OpenAI has introduced GPT-6 Cyber for defensive security research, reporting stronger results on selected vulnerability tasks while limiting access to verified security customers.",
+    "keywords": "OpenAI GPT-6 Cyber, cybersecurity AI, vulnerability research, defensive security, 2026",
+    "image": "image/latest-tech.svg"
+  },
+  {
+    "category": "Technology",
+    "title": "Nothing Teases Its First AI-Native Device for December, but Details Remain Scarce",
+    "date": "2026-11-06",
+    "url": "nothing-ai-native-screenless-device-december-2026.html",
+    "alt": "Nothing Teases Its First AI-Native Device for December, but Details Remain Scarce",
+    "description": "Nothing CEO Carl Pei says the company plans to ship its first AI-native device in December. The product is described as screenless, but its capabilities and price remain unknown.",
+    "keywords": "Nothing AI-native device, Carl Pei, screenless product, December 2026, AI hardware",
+    "image": "image/latest-tech.svg"
+  },
+  {
+    "category": "Gaming",
+    "title": "Apex Legends Announces Godzilla Event Running from November 10 to December 1",
+    "date": "2026-11-06",
+    "url": "apex-legends-godzilla-event-november-2026.html",
+    "alt": "Apex Legends Announces Godzilla Event Running from November 10 to December 1",
+    "description": "Apex Legends’ Godzilla-themed event begins November 10 and runs through December 1, bringing a transformed Storm Point, monster-themed rewards and limited-time activities.",
+    "keywords": "Apex Legends Godzilla event, November 2026, Storm Point, EA, monster skins, Twitch Drops",
+    "image": "image/latest-gaming.svg"
+  },
+  {
+    "category": "Gaming",
+    "title": "EA Brings 25 Classic Games Back to Modern Stores, Including Seven Restored Editions",
+    "date": "2026-11-06",
+    "url": "ea-classics-25-games-restored-steam-gog-november-2026.html",
+    "alt": "EA Brings 25 Classic Games Back to Modern Stores, Including Seven Restored Editions",
+    "description": "EA has made 25 classic PC games available through Steam, GOG and the EA app. Seven received restoration work, while the remaining titles are described as faithful ports.",
+    "keywords": "EA Classics, 25 games, restored editions, Steam, GOG, EA app, November 2026",
+    "image": "image/latest-gaming.svg"
+  },
+  {
+    "category": "Space",
+    "title": "ISRO’s NVS-03 Completes Orbit-Raising Manoeuvres and Reaches Geosynchronous Orbit",
+    "date": "2026-11-06",
+    "url": "isro-nvs-03-reaches-geosynchronous-orbit-november-2026.html",
+    "alt": "ISRO’s NVS-03 Completes Orbit-Raising Manoeuvres and Reaches Geosynchronous Orbit",
+    "description": "ISRO says the NVS-03 navigation satellite completed four orbit-raising manoeuvres after launch on October 30 and reached geosynchronous orbit, with spacecraft health reported normal.",
+    "keywords": "ISRO NVS-03, GSLV-F18, NavIC, geosynchronous orbit, November 2026, Indian navigation satellite",
+    "image": "image/latest-space.svg"
+  },
+  {
+    "category": "Space",
+    "title": "Aditya-L1 Reveals the Hidden Motion Inside an Asymmetric Solar Eruption",
+    "date": "2026-11-06",
+    "url": "aditya-l1-coronal-mass-ejection-asymmetric-expansion-2026.html",
+    "alt": "Aditya-L1 Reveals the Hidden Motion Inside an Asymmetric Solar Eruption",
+    "description": "ISRO says Aditya-L1 observations have helped researchers map the line-of-sight motion and uneven expansion of a coronal mass ejection, improving the picture used in space-weather studies.",
+    "keywords": "Aditya-L1, coronal mass ejection, CME, solar eruption, VELC, space weather, ISRO",
+    "image": "image/latest-space.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Kia Reportedly Weighs a $1.5 Billion Expansion of Its Andhra Pradesh Plant",
+    "date": "2026-11-06",
+    "url": "kia-1-5-billion-andhra-pradesh-plant-expansion-2026.html",
+    "alt": "Kia Reportedly Weighs a $1.5 Billion Expansion of Its Andhra Pradesh Plant",
+    "description": "Reports say Kia is considering a major expansion of its Anantapur facility that could lift annual capacity from 300,000 to 500,000 vehicles, but the plan has not yet been formally confirmed.",
+    "keywords": "Kia India, Andhra Pradesh, Anantapur plant, $1.5 billion investment, capacity expansion, November 2026",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Automobile",
+    "title": "Mercedes-Benz Deepens India Sourcing Plans with Another ₹200 Crore Investment",
+    "date": "2026-11-06",
+    "url": "mercedes-benz-india-local-sourcing-investment-2026.html",
+    "alt": "Mercedes-Benz Deepens India Sourcing Plans with Another ₹200 Crore Investment",
+    "description": "Mercedes-Benz India says it is adding ₹200 crore to local investment this year, taking cumulative investment to ₹3,200 crore, while exploring wider sourcing from Indian suppliers.",
+    "keywords": "Mercedes-Benz India, localisation, local sourcing, ₹200 crore investment, ₹3,200 crore, automotive manufacturing",
+    "image": "image/latest-automobile.svg"
+  },
+  {
+    "category": "Sports",
+    "title": "Cristiano Ronaldo Announces the End of His Portugal International Career",
+    "date": "2026-11-06",
+    "url": "cristiano-ronaldo-portugal-retirement-november-2026.html",
+    "alt": "Cristiano Ronaldo Announces the End of His Portugal International Career",
+    "description": "Cristiano Ronaldo has announced he will step away from Portugal after the November international break, closing a 23-year national-team career with 234 caps and 146 goals.",
+    "keywords": "Cristiano Ronaldo, Portugal retirement, 234 caps, 146 goals, international football, November 2026",
+    "image": "image/latest-sports.svg"
+  },
+  {
+    "category": "Sports",
+    "title": "India Beat Pakistan 3–2 in SAFF Championship Opener After Late Comeback Scare",
+    "date": "2026-11-06",
+    "url": "india-beat-pakistan-3-2-saff-championship-2026.html",
+    "alt": "India Beat Pakistan 3–2 in SAFF Championship Opener After Late Comeback Scare",
+    "description": "India opened its SAFF Championship 2026 campaign with a 3–2 win over Pakistan in Dhaka. Suhail Ahmad Bhat scored twice before Pakistan struck twice in stoppage time.",
+    "keywords": "India Pakistan football, SAFF Championship 2026, Suhail Ahmad Bhat, Dhaka, 3-2, November 5",
+    "image": "image/latest-sports.svg"
+  },
+  {
+    "category": "Anime",
     "title": "Hiiragi-san Chi no Kyuuketsu Jijou Gets a TV Anime Adaptation",
     "date": "2026-11-01",
     "url": "hiiragi-san-chi-no-kyuuketsu-jijou-anime-adaptation-announced.html",
